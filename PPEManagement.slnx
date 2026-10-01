@@ -7,6 +7,8 @@
   </Folder>
   <Project Path="PPEManagement.Common/PPEManagement.Common.csproj" />
   <Project Path="PPEManagement.Entities.Configurations/PPEManagement.Entities.Configurations.csproj" />
+    <Project Path="PPEManagement.Dal.Contracts/PPEManagement.Dal.Contracts.csproj" />
+  </Folder>
   <Project Path="PPEManagement.Entities/PPEManagement.Entities.csproj" />
   <Project Path="PPEManagement/PPEManagement.csproj" />
 </Solution>
