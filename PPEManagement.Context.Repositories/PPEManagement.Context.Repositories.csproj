@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\PPEManagement.Common\PPEManagement.Common.csproj" />
+      <ProjectReference Include="..\PPEManagement.Dal.Contracts\PPEManagement.Dal.Contracts.csproj" />
     </ItemGroup>
 
 </Project>
