@@ -28,7 +28,7 @@ public class PPEStatement : BaseAuditEntity
     public string Reason { get; set; } = string.Empty;
 
     /// <summary>
-    /// Дата и время формирования ведомости.
+    /// Дата формирования ведомости.
     /// </summary>
     public DateTime IssueDate { get; set; } = DateTime.Now;
 
@@ -51,6 +51,21 @@ public class PPEStatement : BaseAuditEntity
     /// Итоговое количество прочих СИЗ, выданных по ведомости (шт./компл.).
     /// </summary>
     public int TotalOtherPPE { get; set; }
+
+    /// <summary>
+    /// Остаток на складе по данной партии (шт.).
+    /// </summary>
+    public int StockBalance { get; set; }
+
+    /// <summary>
+    /// Срок следующей проверки (освежения) СИЗ.
+    /// </summary>
+    public DateTime? NextInspectionDate { get; set; }
+
+    /// <summary>
+    /// Путь к файлу скана подписанной ведомости.
+    /// </summary>
+    public string SignedScanPath { get; set; } = string.Empty;
 
     /// <summary>
     /// Список строк табличной части ведомости.

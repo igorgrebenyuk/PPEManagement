@@ -1,6 +1,4 @@
-﻿using PPEManagement.Dal.Contracts;
-
-namespace PPEManagement.Entities;
+﻿namespace PPEManagement.Entities;
 
 /// <summary>
 /// Сущность строки табличной части ведомости выдачи СИЗ.
@@ -8,52 +6,52 @@ namespace PPEManagement.Entities;
 public class PPEStatementItem : BaseAuditEntity
 {
     /// <summary>
-    /// Внешний ключ связи с родительской ведомостью.
+    /// Внешний ключ шапки ведомости.
     /// </summary>
     public Guid StatementId { get; set; }
 
     /// <summary>
-    /// Навигационное свойство родительской ведомости.
+    /// Навигационное свойство шапки ведомости.
     /// </summary>
-    public PPEStatement? Statement { get; set; }
+    public PPEStatement Statement { get; set; } = null!;
 
     /// <summary>
-    /// ФИО сотрудника-получателя.
+    /// ФИО сотрудника.
     /// </summary>
     public string EmployeeFullName { get; set; } = string.Empty;
 
     /// <summary>
-    /// Табельный номер сотрудника-получателя.
+    /// Табельный номер сотрудника.
     /// </summary>
     public string PersonnelNumber { get; set; } = string.Empty;
 
     /// <summary>
-    /// Наименование выданного СИЗ (из карточки склада).
+    /// Наименование СИЗ (из карточки).
     /// </summary>
     public string PPEName { get; set; } = string.Empty;
 
     /// <summary>
-    /// Номер партии или заводской номер выданного СИЗ.
+    /// Номер партии / заводской №.
     /// </summary>
     public string BatchNumber { get; set; } = string.Empty;
 
     /// <summary>
-    /// Размер выданного СИЗ (или "—", если размер не предусмотрен).
+    /// Размер (если применимо).
     /// </summary>
     public string Size { get; set; } = string.Empty;
 
     /// <summary>
-    /// Выданное количество (шт./компл.).
+    /// Количество (шт./компл.).
     /// </summary>
-    public int Quantity { get; set; }
+    public int Quantity { get; set; } = 1;
 
     /// <summary>
-    /// Дата и время фактической выдачи.
+    /// Дата выдачи СИЗ сотруднику.
     /// </summary>
     public DateTime IssueDate { get; set; } = DateTime.Now;
 
     /// <summary>
-    /// Статус подписи получателя (например, "Подписано УКЭП", "Ожидает подписи").
+    /// Статус подписи (УКЭП или личная подпись).
     /// </summary>
-    public string SignatureStatus { get; set; } = "Ожидает подписи";
+    public string SignatureStatus { get; set; } = string.Empty;
 }
