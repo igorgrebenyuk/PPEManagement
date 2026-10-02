@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\PPEManagement.Context.Repositories\PPEManagement.Context.Repositories.csproj" />
+      <ProjectReference Include="..\PPEManagement.Entities\PPEManagement.Entities.csproj" />
+      <ProjectReference Include="..\PPEManagement.Repositories.Contracts\PPEManagement.Repositories.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>
