@@ -1,71 +1,89 @@
-﻿using PPEManagement.Common;
-using PPEManagement.Dal.Contracts.Interfaces;
+﻿using PPEManagement.Dal.Contracts.Interfaces;
 using PPEManagement.Dal.Contracts.Repositories;
 
 namespace PPEManagement.Context.Repositories;
 
 /// <summary>
-/// Базовый репозиторий записи сущностей
+/// Базовый класс репозитория записи данных
 /// </summary>
-/// <typeparam name="T">Тип сущности</typeparam>
-public class BaseWriteRepository<T> : IBaseWriteRepository.IBaseWriteRepository<T> where T : class, IEntity
+public abstract class BaseWriteRepository<T> where T : class, IEntity
 {
-    protected readonly IWriter Writer;
-    protected readonly IDateTimeProvider DateTimeProvider;
-    protected readonly IIdentityProvider IdentityProvider;
-
-    public BaseWriteRepository(IDbWriterContext writerContext)
+    private readonly IDbWriterContext writerContext;
+    
+    /// <summary>
+    /// Инициализирует новый экземпляр <see cref="BaseWriteRepository{T}"/>
+    /// </summary>
+    protected BaseWriteRepository(IDbWriterContext writerContext)
     {
-        Writer = writerContext.Writer;
-        DateTimeProvider = writerContext.DateTimeProvider;
-        IdentityProvider = writerContext.IdentityProvider;
+        this.writerContext = writerContext;
     }
-
-    /// <inheritdoc />
-    public virtual void Add(T entity)
+    
+    public void Add(T entity)
     {
-        var now = DateTimeProvider.UtcNow;
-        var currentUser = IdentityProvider.Name;
-
-        if (entity is IEntityAuditCreated createdAudit)
+        if (entity is IEntityWithId entityWithId &&
+            entityWithId.Id == Guid.Empty)
         {
-            createdAudit.CreatedAt = now;
-            createdAudit.CreatedBy = currentUser;
+            entityWithId.Id = Guid.NewGuid();
         }
 
-        if (entity is IEntityAuditUpdate updatedAudit)
-        {
-            updatedAudit.UpdatedAt = now;
-            updatedAudit.UpdatedBy = currentUser;
-        }
-
-        Writer.Add(entity);
+        AuditForCreate(entity);
+        AuditForUpdate(entity);
+        writerContext.Writer.Add(entity);
+    }
+    
+    
+    /// <summary>
+    /// Обновляет сущность, заполняя аудит изменения
+    /// </summary>
+    /// <param name="entity">Обновляемая сущность</param>
+    public void Update(T entity)
+    {
+        AuditForUpdate(entity);
+        writerContext.Writer.Update(entity);
     }
 
-    /// <inheritdoc />
-    public virtual void Update(T entity)
+    /// <summary>
+    /// Удаляет сущность: для сущностей с аудитом удаления выполняет мягкое удаление
+    /// </summary>
+    /// <param name="entity">Удаляемая сущность</param>
+    public void Delete(T entity)
     {
-        if (entity is IEntityAuditUpdate updatedAudit)
+        if (entity is IEntityAuditDeletedAt)
         {
-            updatedAudit.UpdatedAt = DateTimeProvider.UtcNow;
-            updatedAudit.UpdatedBy = IdentityProvider.Name;
-        }
-
-        Writer.Update(entity);
-    }
-
-    /// <inheritdoc />
-    public virtual void Delete(T entity)
-    {
-        // Мягкое удаление (Soft Delete), если сущность поддерживает IEntityAuditDeletedAt
-        if (entity is IEntityAuditDeletedAt deletedAudit)
-        {
-            deletedAudit.DeletedAt = DateTimeProvider.UtcNow;
-            Update(entity);
+            AuditForUpdate(entity);
+            AuditForDelete(entity);
+            writerContext.Writer.Update(entity);
         }
         else
         {
-            Writer.Delete(entity);
+            writerContext.Writer.Delete(entity);
+        }
+    }
+    
+    
+    private void AuditForCreate(T entity)
+    {
+        if (entity is IEntityAuditCreated auditCreated)
+        {
+            auditCreated.CreatedAt = writerContext.DateTimeProvider.UtcNow;
+            auditCreated.CreatedBy = writerContext.IdentityProvider.Name;
+        }
+    }
+    
+    private void AuditForUpdate(T entity)
+    {
+        if (entity is IEntityAuditUpdate auditUpdate)
+        {
+            auditUpdate.UpdatedAt = writerContext.DateTimeProvider.UtcNow;
+            auditUpdate.UpdatedBy = writerContext.IdentityProvider.Name;
+        }
+    }
+
+    private void AuditForDelete(T entity)
+    {
+        if (entity is IEntityAuditDeletedAt auditDeleted)
+        {
+            auditDeleted.DeletedAt = writerContext.DateTimeProvider.UtcNow;
         }
     }
 }
