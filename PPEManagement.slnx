@@ -2,7 +2,6 @@
   <Folder Name="/DataAccessLayer/">
     <Project Path="PPEManagement.Context.EntityFrameworkCore/PPEManagement.Context.EntityFrameworkCore.csproj" />
     <Project Path="PPEManagement.Context.Repositories/PPEManagement.Context.Repositories.csproj" />
-    <Project Path="PPEManagement.Context.Tests/PPEManagement.Context.Tests.csproj" />
     <Project Path="PPEManagement.Context/PPEManagement.Context.csproj" />
     <Project Path="PPEManagement.Dal.Contracts/PPEManagement.Dal.Contracts.csproj" />
   </Folder>
@@ -10,7 +9,6 @@
   <Project Path="PPEManagement.Entities.Configurations/PPEManagement.Entities.Configurations.csproj" />
   <Project Path="PPEManagement.Entities/PPEManagement.Entities.csproj" />
   <Project Path="PPEManagement.Repositories.Contracts/PPEManagement.Repositories.Contracts.csproj" />
-  <Project Path="PPEManagement.Repositories.Tests/PPEManagement.Repositories.Tests.csproj" />
   <Project Path="PPEManagement.Repositories/PPEManagement.Repositories.csproj" />
   <Project Path="PPEManagement/PPEManagement.csproj" />
 </Solution>
