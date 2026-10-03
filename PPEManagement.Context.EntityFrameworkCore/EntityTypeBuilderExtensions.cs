@@ -14,7 +14,7 @@ namespace PPEManagement.Context.EntityFrameworkCore
         public static void HasIdAsKey<T>(this EntityTypeBuilder<T> builder)
             where T : class, IEntityWithId
             => builder.HasKey(x => x.Id);
-
+     
         /// <summary>
         /// Задаёт конфигурацию свойств аудита создания
         /// </summary>

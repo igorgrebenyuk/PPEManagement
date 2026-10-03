@@ -8,7 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ff56b42-32dd-4abc-b93f-56a0e1bca4aa" name="Changes" comment="" />
+    <list default="true" id="5ff56b42-32dd-4abc-b93f-56a0e1bca4aa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PPEManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PPEManagement/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +19,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="AddPPEManagementContextAndConfigs" />
+        <entry key="$PROJECT_DIR$" value="AddPPEManagementRepostories" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,6 +79,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;AddPPEManagementUnitTestsForRepostories&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -130,6 +133,12 @@
       <workItem from="1790350822170" duration="10959000" />
       <workItem from="1790845174133" duration="7501000" />
       <workItem from="1790857022732" duration="3177000" />
+      <workItem from="1791036504373" duration="826000" />
+      <workItem from="1791037830795" duration="119000" />
+      <workItem from="1791037966076" duration="199000" />
+      <workItem from="1791039805497" duration="336000" />
+      <workItem from="1791040191041" duration="176000" />
+      <workItem from="1791040480701" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="Создал абстрактный класс базовых аудитов для сущностей , чтобы не писать одни и те же поля в сущностях , а так же создал 1 солюшн папку для разработки прослойки между БД и сервисами + создал библиотеку классов для моих сущностей">
       <option name="closed" value="true" />
@@ -179,6 +188,17 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Создал абстрактный класс базовых аудитов для сущностей , чтобы не писать одни и те же поля в сущностях , а так же создал 1 солюшн папку для разработки прослойки между БД и сервисами + создал библиотеку классов для моих сущностей" />

@@ -10,8 +10,5 @@
   <Project Path="PPEManagement.Entities/PPEManagement.Entities.csproj" />
   <Project Path="PPEManagement.Repositories.Contracts/PPEManagement.Repositories.Contracts.csproj" />
   <Project Path="PPEManagement.Repositories/PPEManagement.Repositories.csproj" />
-    <Project Path="PPEManagement.Dal.Contracts/PPEManagement.Dal.Contracts.csproj" />
-  </Folder>
-  <Project Path="PPEManagement.Entities/PPEManagement.Entities.csproj" />
   <Project Path="PPEManagement/PPEManagement.csproj" />
 </Solution>
