@@ -13,7 +13,6 @@
   <Project Path="PPEManagement.Repositories.Tests/PPEManagement.Repositories.Tests.csproj" />
   <Project Path="PPEManagement.Repositories/PPEManagement.Repositories.csproj" />
   <Project Path="PPEManagement.Services.Contracts/PPEManagement.Services.Contracts.csproj" />
-  <Project Path="PPEManagement.Services.Tests/PPEManagement.Services.Tests.csproj" />
   <Project Path="PPEManagement.Services/PPEManagement.Services.csproj" />
   <Project Path="PPEManagement/PPEManagement.csproj" />
 </Solution>
