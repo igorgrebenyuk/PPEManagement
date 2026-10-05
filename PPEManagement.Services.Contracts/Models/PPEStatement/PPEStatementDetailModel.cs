@@ -15,7 +15,7 @@ public class PPEStatementDetailModel
     /// <summary>
     /// Номер ведомости
     /// </summary>
-    public int StatementNumber { get; set; }
+    public string StatementNumber { get; set; } = string.Empty;
 
     /// <summary>
     /// Дата выдачи
