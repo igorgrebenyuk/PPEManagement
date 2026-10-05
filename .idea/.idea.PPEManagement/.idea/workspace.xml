@@ -10,41 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ff56b42-32dd-4abc-b93f-56a0e1bca4aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Common/InvalidateItemModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Exceptions/EntityNotFoundException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Exceptions/NotFoundException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Exceptions/PPEManagementException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Exceptions/PPEValidationException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/IEmployeeService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/IPPECardService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/IPPEStatementService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/Employee/EmployeeCreateModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/Employee/EmployeeModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/Employee/EmployeeUpdateModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardCreateModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardUpdateModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementCreateModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementDetailModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemCreateModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/PPEManagement.Services.Contracts.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/AutoMapper/ServiceProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/EmployeeService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/PPECardService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/PPEManagement.Services.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/PPEStatementService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/Validators/Constraints/EmployeeConstraints.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/Validators/Constraints/PPECardConstraints.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/Validators/EmployeeCreateModelValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/Validators/EmployeeUpdateModelValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Tests/PPECardServiceTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Tests/PPEManagement.Services.Tests.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Tests/PPEStatementServiceTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PPEManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PPEManagement/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Dal.Contracts/Repositories/IBaseWriteRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Dal.Contracts/Repositories/IBaseWriteRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IEmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IEmployeeRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IPPECardRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IPPECardRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IPPEStatementItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IPPEStatementItemRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IPPEStatementRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IPPEStatementRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementDetailModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementDetailModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services/AutoMapper/ServiceProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services/AutoMapper/ServiceProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PPEManagement.slnx" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.slnx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="AddPPEManagementUnitTestsForRepostories" />
+        <entry key="$PROJECT_DIR$" value="AddPPEManagementServicesAndDtoModels" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -123,6 +95,8 @@
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemCreateModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Tests/PPECardServiceTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Tests/PPEStatementServiceTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services/AutoMapper/ServiceProfile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services/EmployeeService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services/PPECardService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -148,7 +122,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "AddPPEManagementServicesAndDtoModels",
+    "git-widget-placeholder": "AddPPEManagementUnitTestsForServices",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -235,7 +209,7 @@
       <workItem from="1791111836444" duration="43000" />
       <workItem from="1791119272001" duration="931000" />
       <workItem from="1791200470822" duration="851000" />
-      <workItem from="1791207730230" duration="4387000" />
+      <workItem from="1791207730230" duration="7543000" />
     </task>
     <task id="LOCAL-00001" summary="Создал абстрактный класс базовых аудитов для сущностей , чтобы не писать одни и те же поля в сущностях , а так же создал 1 солюшн папку для разработки прослойки между БД и сервисами + создал библиотеку классов для моих сущностей">
       <option name="closed" value="true" />
@@ -293,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791042714737</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Сделал ДТО модели , написал конракты сервисов , сами сервисы , екстеншены , валидаторы , константы">
+      <option name="closed" value="true" />
+      <created>1791212665352</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1791212665352</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +303,8 @@
     <MESSAGE value="Доделал конфигурацию для остальных сущностей и добавил необходимые поля" />
     <MESSAGE value="Создание ПР + исправление xml файла от ошибки" />
     <MESSAGE value="Сдела юнит тесты на памяти для репозиториев каждой сущности" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сдела юнит тесты на памяти для репозиториев каждой сущности" />
+    <MESSAGE value="Сделал ДТО модели , написал конракты сервисов , сами сервисы , екстеншены , валидаторы , константы" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал ДТО модели , написал конракты сервисов , сами сервисы , екстеншены , валидаторы , константы" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
