@@ -10,14 +10,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ff56b42-32dd-4abc-b93f-56a0e1bca4aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Context.Tests/PPEManagementContextInMemory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Context.Tests/TestWriterContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Repositories.Tests/EmployeeRepositoryTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Repositories.Tests/PPECardRepositoryTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Repositories.Tests/PPEStatementItemRepositoryTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Repositories.Tests/PPEStatementRepositoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Common/InvalidateItemModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Exceptions/EntityNotFoundException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Exceptions/NotFoundException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Exceptions/PPEManagementException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Exceptions/PPEValidationException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/IEmployeeService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/IPPECardService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/IPPEStatementService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/Employee/EmployeeCreateModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/Employee/EmployeeModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/Employee/EmployeeUpdateModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardCreateModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardUpdateModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementCreateModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementDetailModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemCreateModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/PPEManagement.Services.Contracts.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/AutoMapper/ServiceProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/EmployeeService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/PPECardService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/PPEManagement.Services.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/PPEStatementService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/Validators/Constraints/EmployeeConstraints.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/Validators/Constraints/PPECardConstraints.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/Validators/EmployeeCreateModelValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/Validators/EmployeeUpdateModelValidator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PPEManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PPEManagement/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Context.Repositories/BaseWriteRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Context.Repositories/BaseWriteRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Dal.Contracts/Repositories/IBaseWriteRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Dal.Contracts/Repositories/IBaseWriteRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IEmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IEmployeeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IPPECardRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IPPECardRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IPPEStatementItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IPPEStatementItemRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IPPEStatementRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/IPPEStatementRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PPEManagement.slnx" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.slnx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +55,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="AddPPEManagementRepostories" />
+        <entry key="$PROJECT_DIR$" value="AddPPEManagementUnitTestsForRepostories" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,6 +75,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/PPEManagement.Common/IDateTimeProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Common/IIdentityProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Common/InvalidateItemModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Context.EntityFrameworkCore/EntityTypeBuilderExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Context.Repositories/BaseWriteRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Context.Tests/PPEManagementContextInMemory.cs" root0="FORCE_HIGHLIGHTING" />
@@ -77,6 +105,32 @@
     <setting file="file://$PROJECT_DIR$/PPEManagement.Repositories.Tests/PPECardRepositoryTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Repositories.Tests/PPEStatementItemRepositoryTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Repositories.Tests/PPEStatementRepositoryTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Exceptions/EntityNotFoundException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Exceptions/NotFoundException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Exceptions/PPEManagementException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Exceptions/PPEValidationException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/IEmployeeService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/IPPECardService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/IPPEStatementService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/Employee/EmployeeCreateModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/Employee/EmployeeModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/Employee/EmployeeUpdateModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardCreateModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardUpdateModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementCreateModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementDetailModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemCreateModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services/AutoMapper/ServiceProfile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services/EmployeeService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services/PPECardService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services/PPEStatementService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services/Validators/Constraints/EmployeeConstraints.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services/Validators/Constraints/PPECardConstraints.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services/Validators/EmployeeCreateModelValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services/Validators/EmployeeUpdateModelValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -88,21 +142,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;AddPPEManagementUnitTestsForRepostories&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "AddPPEManagementServicesAndDtoModels",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.PPEManagement: http">
     <configuration name="PPEManagement.Repositories.Tests" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -175,7 +229,13 @@
       <workItem from="1791039805497" duration="336000" />
       <workItem from="1791040191041" duration="176000" />
       <workItem from="1791040480701" duration="9000" />
-      <workItem from="1791040702605" duration="1953000" />
+      <workItem from="1791040702605" duration="2316000" />
+      <workItem from="1791046831474" duration="340000" />
+      <workItem from="1791060005001" duration="313000" />
+      <workItem from="1791111836444" duration="43000" />
+      <workItem from="1791119272001" duration="931000" />
+      <workItem from="1791200470822" duration="851000" />
+      <workItem from="1791207730230" duration="4387000" />
     </task>
     <task id="LOCAL-00001" summary="Создал абстрактный класс базовых аудитов для сущностей , чтобы не писать одни и те же поля в сущностях , а так же создал 1 солюшн папку для разработки прослойки между БД и сервисами + создал библиотеку классов для моих сущностей">
       <option name="closed" value="true" />
@@ -225,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791040763557</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Сдела юнит тесты на памяти для репозиториев каждой сущности">
+      <option name="closed" value="true" />
+      <created>1791042714737</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1791042714737</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +320,8 @@
     <MESSAGE value="- Реализован PPEManagementContext с поддержкой IReader, IWriter и IUnitOfWork&#10;- Добавлены контракты аудита (IEntityWithId, IEntityAuditCreated, IEntityAuditUpdate, IEntityAuditDeletedAt)&#10;- Добавлен базовый класс BaseAuditEntity и базовый репозиторий записи BaseWriteRepository&#10;- Созданы интерфейсы IDbWriterContext, IDateTimeProvider и IIdentityProvider&#10;- Добавлены методы расширения EntityTypeBuilderExtensions и маркер IEntitiesAnchor" />
     <MESSAGE value="Доделал конфигурацию для остальных сущностей и добавил необходимые поля" />
     <MESSAGE value="Создание ПР + исправление xml файла от ошибки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создание ПР + исправление xml файла от ошибки" />
+    <MESSAGE value="Сдела юнит тесты на памяти для репозиториев каждой сущности" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сдела юнит тесты на памяти для репозиториев каждой сущности" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

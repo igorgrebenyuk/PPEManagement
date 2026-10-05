@@ -1,11 +1,12 @@
-﻿using PPEManagement.Entities;
+﻿using PPEManagement.Dal.Contracts.Repositories;
+using PPEManagement.Entities;
 
 namespace PPEManagement.Repositories.Contracts;
 
 /// <summary>
 /// Репозиторий работы с <see cref="Employee"/>
 /// </summary>
-public interface IEmployeeRepository
+public interface IEmployeeRepository: IBaseWriteRepository<Employee>
 {
     /// <summary>
     /// Получение всех сотрудников

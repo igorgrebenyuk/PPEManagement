@@ -1,11 +1,12 @@
-﻿using PPEManagement.Entities;
+﻿using PPEManagement.Dal.Contracts.Repositories;
+using PPEManagement.Entities;
 
 namespace PPEManagement.Repositories.Contracts;
 
 /// <summary>
 /// Репозиторий работы с <see cref="PPEStatementItem"/>
 /// </summary>
-public interface IPPEStatementItemRepository
+public interface IPPEStatementItemRepository: IBaseWriteRepository<PPEStatementItem>
 {
     /// <summary>
     /// Получение всех строк ведомостей
