@@ -1,11 +1,12 @@
-﻿using PPEManagement.Entities;
+﻿using PPEManagement.Dal.Contracts.Repositories;
+using PPEManagement.Entities;
 
 namespace PPEManagement.Repositories.Contracts;
 
 /// <summary>
 /// Репозиторий работы с <see cref="PPECard"/>
 /// </summary>
-public interface IPPECardRepository
+public interface IPPECardRepository : IBaseWriteRepository<PPECard>
 {
     /// <summary>
     /// Получение всех карточек СИЗ

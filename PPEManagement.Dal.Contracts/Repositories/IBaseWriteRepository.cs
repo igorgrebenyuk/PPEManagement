@@ -2,8 +2,8 @@
 
 namespace PPEManagement.Dal.Contracts.Repositories;
 
-public interface IBaseWriteRepository
-{
+
+
     /// <summary>
     /// Базовый интерфейс репозитория записи сущностей
     /// </summary>
@@ -28,4 +28,3 @@ public interface IBaseWriteRepository
         /// <param name="entity">Удаляемая сущность</param>
         void Delete(T entity);
     }
-}
