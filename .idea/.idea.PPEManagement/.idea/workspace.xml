@@ -10,14 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ff56b42-32dd-4abc-b93f-56a0e1bca4aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Tests/PPECardServiceTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Tests/PPEManagement.Services.Tests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Tests/PPEStatementServiceTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PPEManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PPEManagement/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementDetailModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementDetailModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Services/AutoMapper/ServiceProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services/AutoMapper/ServiceProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.slnx" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.slnx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="AddPPEManagementServicesAndDtoModels" />
+        <entry key="$PROJECT_DIR$" value="AddPPEManagementUnitTestsForServices" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -122,7 +115,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "AddPPEManagementUnitTestsForServices",
+    "git-widget-placeholder": "AddPPEManagementPostGruAndMigration",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -275,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791212665352</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Добавил постгрю , и создал миграции">
+      <option name="closed" value="true" />
+      <created>1791283195996</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1791283195996</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +305,8 @@
     <MESSAGE value="Создание ПР + исправление xml файла от ошибки" />
     <MESSAGE value="Сдела юнит тесты на памяти для репозиториев каждой сущности" />
     <MESSAGE value="Сделал ДТО модели , написал конракты сервисов , сами сервисы , екстеншены , валидаторы , константы" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал ДТО модели , написал конракты сервисов , сами сервисы , екстеншены , валидаторы , константы" />
+    <MESSAGE value="Добавил постгрю , и создал миграции" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил постгрю , и создал миграции" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -19,6 +19,9 @@ public class PPEManagementContext : DbContext,
     public PPEManagementContext(DbContextOptions<PPEManagementContext> options)
         : base(options)
     {
+        // https://aspnetzero.com
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", isEnabled: true);
+        AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", isEnabled: true);
     }
 
     /// <inheritdoc />
