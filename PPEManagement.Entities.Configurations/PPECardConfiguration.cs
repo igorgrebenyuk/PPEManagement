@@ -36,8 +36,10 @@ public class PPECardConfiguration : IEntityTypeConfiguration<PPECard>
         builder.Property(x => x.IssuedToEmployeeFullName)
             .HasMaxLength(250);
 
+      
         builder.HasIndex(x => new { x.Name, x.BatchNumber })
             .HasDatabaseName("IX_PPECards_Name_BatchNumber")
-            .HasFilter($"[{nameof(IEntityAuditDeletedAt.DeletedAt)}] IS NULL");
+            .HasFilter($"\"{nameof(IEntityAuditDeletedAt.DeletedAt)}\" IS NULL");
+
     }
 }

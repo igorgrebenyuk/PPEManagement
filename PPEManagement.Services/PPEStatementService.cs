@@ -8,8 +8,8 @@ using PPEManagement.Dal.Contracts.Repositories;
 using PPEManagement.Repositories.Contracts;
 using PPEManagement.Entities;
 
-namespace PPEManagement.Services
-{
+namespace PPEManagement.Services;
+
     /// <summary>
     /// Сервис для работы с ведомостями выдачи СИЗ.
     /// </summary>
@@ -63,7 +63,10 @@ namespace PPEManagement.Services
 
             var entity = mapper.Map<PPEStatement>(ppeStatementModel);
 
-            // Автоматический пересчет итоговых сумм по категориям СИЗ в позициях ведомости
+            // 1. Генерация уникального регистрационного номера ведомости
+            entity.StatementNumber = $"ВЕД-{DateTime.UtcNow:yyyyMMdd}-{Guid.NewGuid().ToString()[..4].ToUpper()}";
+
+            // 2. Автоматический пересчет итоговых сумм по категориям СИЗ в позициях ведомости
             entity.TotalGasMasks = entity.Items.Count(i => i.PPEName.Contains("Противогаз", StringComparison.OrdinalIgnoreCase));
             entity.TotalKIMGZ = entity.Items.Count(i => i.PPEName.Contains("КИМГЗ", StringComparison.OrdinalIgnoreCase) || i.PPEName.Contains("Аптечка", StringComparison.OrdinalIgnoreCase));
             entity.TotalOtherPPE = entity.Items.Count - (entity.TotalGasMasks + entity.TotalKIMGZ);
@@ -86,5 +89,36 @@ namespace PPEManagement.Services
             ppeStatementRepository.Delete(entity);
             await unitOfWork.SaveChangesAsync(cancellationToken);
         }
+        public async Task UpdatePPEStatementAsync(Guid id, PPEStatementCreateModel ppeStatementModel, CancellationToken cancellationToken)
+        {
+            // 1. Валидация входных данных
+            var validationResult = await createValidator.ValidateAsync(ppeStatementModel, cancellationToken);
+            if (!validationResult.IsValid)
+            {
+                throw new PPEValidationException(validationResult.Errors.Select(e => new InvalidateItemModel
+                {
+                    PropertyName = e.PropertyName,
+                    ErrorMessage = e.ErrorMessage
+                }));
+            }
+
+            // 2. Получение существующей сущности из БД
+            var entity = await ppeStatementRepository.GetPPEStatementByIdAsync(id, cancellationToken);
+            if (entity is null)
+            {
+                throw new EntityNotFoundException<PPEStatement>(id);
+            }
+
+            // 3. Обновление полей сущности из модели
+            mapper.Map(ppeStatementModel, entity);
+
+            // 4. Пересчет итоговых сумм СИЗ
+            entity.TotalGasMasks = entity.Items.Count(i => i.PPEName.Contains("Противогаз", StringComparison.OrdinalIgnoreCase));
+            entity.TotalKIMGZ = entity.Items.Count(i => i.PPEName.Contains("КИМГЗ", StringComparison.OrdinalIgnoreCase) || i.PPEName.Contains("Аптечка", StringComparison.OrdinalIgnoreCase));
+            entity.TotalOtherPPE = entity.Items.Count - (entity.TotalGasMasks + entity.TotalKIMGZ);
+
+            // 5. Сохранение изменений в БД
+            ppeStatementRepository.Update(entity);
+            await unitOfWork.SaveChangesAsync(cancellationToken);
+        }
     }
-}

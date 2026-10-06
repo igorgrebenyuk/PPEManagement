@@ -39,6 +39,6 @@ public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
         builder.HasIndex(x => x.PersonnelNumber)
             .HasDatabaseName("IX_Employees_PersonnelNumber")
             .IsUnique()
-            .HasFilter($"[{nameof(IEntityAuditDeletedAt.DeletedAt)}] IS NULL");
+            .HasFilter($"\"{nameof(IEntityAuditDeletedAt.DeletedAt)}\" IS NULL");
     }
 }

@@ -1,32 +1,31 @@
 ﻿namespace PPEManagement.Services.Contracts.Models.PPEStatement;
 
-/// <summary>
-/// Модель ведомости выдачи СИЗ
-/// </summary>
 public class PPEStatementModel
 {
-    /// <summary>
-    /// Идентификатор
-    /// </summary>
     public Guid Id { get; set; }
-
+    
     /// <summary>
-    /// Номер ведомости
+    /// Регистрационный номер ведомости.
     /// </summary>
     public string StatementNumber { get; set; } = string.Empty;
 
     /// <summary>
-    /// Дата выдачи
+    /// Наименование организации.
+    /// </summary>
+    public string OrganizationName { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Подразделение.
+    /// </summary>
+    public string DepartmentName { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Основание выдачи.
+    /// </summary>
+    public string Reason { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Дата составления.
     /// </summary>
     public DateTime IssueDate { get; set; }
-
-    /// <summary>
-    /// Идентификатор сотрудника
-    /// </summary>
-    public Guid EmployeeId { get; set; }
-
-    /// <summary>
-    /// ФИО сотрудника
-    /// </summary>
-    public string EmployeeFullName { get; set; } = string.Empty;
 }

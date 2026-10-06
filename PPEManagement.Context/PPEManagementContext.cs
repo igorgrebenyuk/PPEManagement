@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PPEManagement.Common;
 using PPEManagement.Dal.Contracts.Interfaces;
 using PPEManagement.Dal.Contracts.Repositories;
 using PPEManagement.Entities.Configurations;
@@ -11,18 +12,40 @@ namespace PPEManagement.Context;
 public class PPEManagementContext : DbContext,
     IReader,
     IWriter,
-    IUnitOfWork
+    IUnitOfWork,
+    IDbWriterContext
 {
+    private readonly IDateTimeProvider dateTimeProvider;
+    private readonly IIdentityProvider identityProvider;
+
     /// <summary>
     /// Инициализирует новый экземпляр <see cref="PPEManagementContext"/>
     /// </summary>
-    public PPEManagementContext(DbContextOptions<PPEManagementContext> options)
+    public PPEManagementContext(
+        DbContextOptions<PPEManagementContext> options,
+        IDateTimeProvider dateTimeProvider = null!, // Добавляем в конструктор для IDbWriterContext
+        IIdentityProvider identityProvider = null!) // Добавляем в конструктор для IDbWriterContext
         : base(options)
     {
-        // https://aspnetzero.com
+        this.dateTimeProvider = dateTimeProvider;
+        this.identityProvider = identityProvider;
+
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", isEnabled: true);
         AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", isEnabled: true);
     }
+
+    #region Реализация IDbWriterContext
+
+    /// <inheritdoc />
+    public IWriter Writer => this; // Возвращает текущий контекст, так как он сам реализует IWriter
+
+    /// <inheritdoc />
+    public IDateTimeProvider DateTimeProvider => dateTimeProvider;
+
+    /// <inheritdoc />
+    public IIdentityProvider IdentityProvider => identityProvider;
+
+    #endregion
 
     /// <inheritdoc />
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -54,7 +77,6 @@ public class PPEManagementContext : DbContext,
     {
         var count = await base.SaveChangesAsync(cancellationToken);
         
-        // Отсоединяем все сущности от кэша трекера после сохранения (Stateless подходы / паттерн из репозитория)
         foreach (var entry in base.ChangeTracker.Entries().ToArray())
         {
             entry.State = EntityState.Detached;

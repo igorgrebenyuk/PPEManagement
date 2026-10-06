@@ -49,6 +49,6 @@ public class PPEStatementConfiguration : IEntityTypeConfiguration<PPEStatement>
         builder.HasIndex(x => x.StatementNumber)
             .HasDatabaseName("IX_PPEStatements_StatementNumber")
             .IsUnique()
-            .HasFilter($"[{nameof(IEntityAuditDeletedAt.DeletedAt)}] IS NULL");
+            .HasFilter($"\"{nameof(IEntityAuditDeletedAt.DeletedAt)}\" IS NULL");
     }
 }
