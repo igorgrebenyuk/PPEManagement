@@ -10,31 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ff56b42-32dd-4abc-b93f-56a0e1bca4aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Common/DateTimeProvider.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/Validators/PPECardUpdateModelValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PPEManagement/Infrastructure/HttpIdentityProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/Migrations/20261005170634_InitialCreate.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/Migrations/20261005170634_InitialCreate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/Migrations/20261005171721_Init.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/Migrations/20261005171721_Init.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/Migrations/PPEManagementContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PPEManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PPEManagement/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PPEManagement.Context/PPEManagementContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Context/PPEManagementContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/PPEManagementDesignTimeContextFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Context/PPEManagementDesignTimeContextFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Entities.Configurations/EmployeeConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Entities.Configurations/EmployeeConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Entities.Configurations/PPECardConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Entities.Configurations/PPECardConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Entities.Configurations/PPEStatementConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Entities.Configurations/PPEStatementConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Entities/PPECard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Entities/PPECard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardUpdateModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardUpdateModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Repositories/PPEStatementRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Repositories/PPEStatementRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemCreateModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemCreateModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Tests/PPEStatementServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Tests/PPEStatementServiceTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PPEManagement.Services/AutoMapper/ServiceProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services/AutoMapper/ServiceProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PPEManagement.Services/PPEStatementService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services/PPEStatementService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement/Controllers/PPEStatementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Controllers/PPEStatementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement/PPEManagement.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/PPEManagement.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PPEManagement/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Create.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Views/Shared/_Layout.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="AddPPEManagementUnitTestsForServices" />
+        <entry key="$PROJECT_DIR$" value="AddPPEManagementControllerAndView" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -148,22 +134,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.PPEManagement: http.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "AddPPEManagementControllerAndView",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.PPEManagement: http.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;PPEManagementFinalPr&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.PPEManagement: http">
@@ -245,6 +231,9 @@
       <workItem from="1791119272001" duration="931000" />
       <workItem from="1791200470822" duration="851000" />
       <workItem from="1791207730230" duration="7543000" />
+      <workItem from="1791313521070" duration="1489000" />
+      <workItem from="1791315732975" duration="785000" />
+      <workItem from="1791321742755" duration="2690000" />
     </task>
     <task id="LOCAL-00001" summary="Создал абстрактный класс базовых аудитов для сущностей , чтобы не писать одни и те же поля в сущностях , а так же создал 1 солюшн папку для разработки прослойки между БД и сервисами + создал библиотеку классов для моих сущностей">
       <option name="closed" value="true" />
@@ -342,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791298493908</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Сделал все вьюхи , сделал котроллер , переделал конекшн стрингу , написал программ , дополнил маппер для корретктного ввода данных , буду искать баги и исправлять в следующем ПР">
+      <option name="closed" value="true" />
+      <created>1791309247866</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1791309247866</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +372,8 @@
     <MESSAGE value="Делаю Создание ПР" />
     <MESSAGE value="переработал программ" />
     <MESSAGE value="Переделал контроллер , сделал все необходимые вьюхи , сделал модель для обновления ведомости выдачи СИЗ , сделал метод редактирования ведомости , написал программ , осталось разобраться с рантайм ошибками" />
-    <option name="LAST_COMMIT_MESSAGE" value="Переделал контроллер , сделал все необходимые вьюхи , сделал модель для обновления ведомости выдачи СИЗ , сделал метод редактирования ведомости , написал программ , осталось разобраться с рантайм ошибками" />
+    <MESSAGE value="Сделал все вьюхи , сделал котроллер , переделал конекшн стрингу , написал программ , дополнил маппер для корретктного ввода данных , буду искать баги и исправлять в следующем ПР" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал все вьюхи , сделал котроллер , переделал конекшн стрингу , написал программ , дополнил маппер для корретктного ввода данных , буду искать баги и исправлять в следующем ПР" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

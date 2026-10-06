@@ -10,7 +10,7 @@ public class PPEStatementItemModel
     /// </summary>
     public Guid Id { get; set; }
 
-    /// <summary>
+    /// <summary>   
     /// Идентификатор СИЗ
     /// </summary>
     public Guid PPECardId { get; set; }

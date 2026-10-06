@@ -38,7 +38,7 @@ public class PPEStatementRepository : BaseWriteRepository<PPEStatement>, IPPESta
         => reader.Read<PPEStatement>()
             .NotDeletedAt()
             .ById(id)
-            .Include(x => x.Items)
+            .Include(x => x.Items.Where(i => i.DeletedAt == null))
             .FirstOrDefaultAsync(cancellationToken);
 
     /// <summary>

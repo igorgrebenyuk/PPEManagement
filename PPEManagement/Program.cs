@@ -46,6 +46,7 @@ builder.Services.AddScoped<IIdentityProvider, HttpIdentityProvider>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IPPECardRepository, PPECardRepository>();
 builder.Services.AddScoped<IPPEStatementRepository, PPEStatementRepository>();
+builder.Services.AddScoped<IPPEStatementItemRepository, PPEStatementItemRepository>();
 
 // AutoMapper (это и была ваша ошибка)
 builder.Services.AddAutoMapper(cfg => { }, typeof(ServiceProfile));

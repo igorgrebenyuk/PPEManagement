@@ -6,6 +6,10 @@
 public class PPEStatementItemCreateModel
 {
     /// <summary>
+    /// Идентификатор существующей позиции (null для новой).
+    /// </summary>
+    public Guid? Id { get; set; }
+    /// <summary>
     /// Идентификатор сотрудника.
     /// </summary>
     public Guid EmployeeId { get; set; }

@@ -62,7 +62,7 @@ public class PPEManagementContext : DbContext,
 
     /// <inheritdoc />
     void IWriter.Add<TEntity>(TEntity entity)
-        => base.Entry(entity).State = EntityState.Added;
+        => base.Set<TEntity>().Add(entity);
 
     /// <inheritdoc />
     void IWriter.Update<TEntity>(TEntity entity)
