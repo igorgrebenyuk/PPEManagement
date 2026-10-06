@@ -53,6 +53,7 @@ public class ServiceProfile : Profile
         CreateMap<PPEStatementCreateModel, PPEStatement>()
             .ForMember(dest => dest.IssueDate, opt => opt.MapFrom(src => src.StatementDate));
 
-        CreateMap<PPEStatementItemCreateModel, PPEStatementItem>();
+        CreateMap<PPEStatementItemCreateModel, PPEStatementItem>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore());
     }
 }

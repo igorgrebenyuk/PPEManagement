@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging.Abstractions;
 using PPEManagement.Context.Tests;
 using PPEManagement.Repositories; 
 using PPEManagement.Entities;
+using PPEManagement.Repositories.Contracts;
 using PPEManagement.Services.AutoMapper;
 using PPEManagement.Services.Contracts.Exceptions;
 using PPEManagement.Services.Contracts.Models.PPEStatement;
@@ -20,6 +21,7 @@ namespace PPEManagement.Services.Tests;
 public class PPEStatementServiceTests : PPEManagementContextInMemory
 {
     private readonly PPEStatementService ppeStatementService;
+    private readonly IPPEStatementItemRepository itemRepository;
 
     /// <summary>
     /// ctor
@@ -39,6 +41,7 @@ public class PPEStatementServiceTests : PPEManagementContextInMemory
 
         ppeStatementService = new PPEStatementService(
             ppeStatementRepository,
+            itemRepository,
             UnitOfWork,
             mapper,
             createValidator);

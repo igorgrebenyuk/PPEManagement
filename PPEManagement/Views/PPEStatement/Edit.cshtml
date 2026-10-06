@@ -86,7 +86,7 @@
                             @{ int itemIndex = 0; }
                             @foreach (var item in Model.Items)
                             {
-                                <tr>
+                                <tr data-id="@item.Id">
                                     <td>@(itemIndex + 1)</td>
                                     <td><input type="text" class="form-control form-control-sm" value="@item.EmployeeFullName" required></td>
                                     <td><input type="text" class="form-control form-control-sm" value="@item.PersonnelNumber"></td>
@@ -164,6 +164,7 @@
                 const inputs = row.querySelectorAll('input');
                 if (inputs.length >= 6) {
                     items.push({
+                        id: row.dataset.id || null,
                         employeeFullName: inputs[0].value,
                         personnelNumber: inputs[1].value,
                         ppeName: inputs[2].value,
@@ -181,7 +182,7 @@
                 departmentName: document.getElementById('departmentName').value,
                 reason: document.getElementById('reason').value,
                 responsiblePerson: document.getElementById('responsiblePerson').value,
-                issueDate: new Date().toISOString(),
+                statementDate: '@Model.IssueDate.ToString("yyyy-MM-dd")',   
                 items: items
             };
 
