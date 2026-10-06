@@ -21,7 +21,7 @@ public class PPEManagementDesignTimeContextFactory : IDesignTimeDbContextFactory
         /// </remarks>
         public PPEManagementContext CreateDbContext(string[] args)
         {
-        var connectionString = "Host=localhost;Port=5432;Database=PPEManagement;Username=postgres;Password=";
+        var connectionString = "Host=localhost;Port=5103;Database=PPEManagement;Username=postgres;Password=";
         var options = new DbContextOptionsBuilder<PPEManagementContext>()
             .UseNpgsql(connectionString)
             .LogTo(Console.WriteLine)

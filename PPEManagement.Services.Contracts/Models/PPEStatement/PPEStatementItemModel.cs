@@ -29,4 +29,29 @@ public class PPEStatementItemModel
     /// Количество
     /// </summary>
     public int Quantity { get; set; }
+
+    /// <summary>
+    /// ФИО сотрудника
+    /// </summary>
+    public string EmployeeFullName { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Табельный номер сотрудника
+    /// </summary>
+    public string PersonnelNumber { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Номер партии
+    /// </summary>
+    public string BatchNumber { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Размер
+    /// </summary>
+    public string Size { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Дата выдачи СИЗ
+    /// </summary>
+    public DateTime IssueDate { get; set; }
 }

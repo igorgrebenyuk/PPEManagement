@@ -1,0 +1,108 @@
+﻿@model PPEManagement.Services.Contracts.Models.PPEStatement.PPEStatementDetailModel
+
+@{
+    ViewData["Title"] = $"Ведомость #{Model.Id}";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Ведомость выдачи СИЗ</h2>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">
+                <i class="bi bi-pencil"></i> Редактировать
+            </a>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Назад
+            </a>
+        </div>
+    </div>
+
+    <!-- Информация о ведомости -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Основная информация</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <dl class="row mb-0">
+                        <dt class="col-sm-5">Организация:</dt>
+                        <dd class="col-sm-7">@Model.OrganizationName</dd>
+
+                        <dt class="col-sm-5">Подразделение:</dt>
+                        <dd class="col-sm-7">@Model.DepartmentName</dd>
+
+                        <dt class="col-sm-5">Основание выдачи:</dt>
+                        <dd class="col-sm-7">@Model.Reason</dd>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <dl class="row mb-0">
+                        <dt class="col-sm-5">Дата выдачи:</dt>
+                        <dd class="col-sm-7">@Model.IssueDate.ToString("dd.MM.yyyy")</dd>
+
+                        <dt class="col-sm-5">Ответственное лицо:</dt>
+                        <dd class="col-sm-7">@Model.ResponsiblePerson</dd>
+
+                        <dt class="col-sm-5">Всего позиций:</dt>
+                        <dd class="col-sm-7">@Model.Items.Count</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Таблица позиций -->
+    <div class="card mb-4">
+        <div class="card-header bg-success text-white">
+            <h5 class="mb-0">Позиции ведомости</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="table-light">
+                        <tr>
+                            <th>№</th>
+                            <th>ФИО сотрудника</th>
+                            <th>Табельный номер</th>
+                            <th>Наименование СИЗ</th>
+                            <th>Номер партии</th>
+                            <th>Размер</th>
+                            <th>Количество</th>
+                            <th>Дата выдачи</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ int rowNum = 1; }
+                        @foreach (var item in Model.Items)
+                        {
+                            <tr>
+                                <td>@rowNum</td>
+                                <td>@item.EmployeeFullName</td>
+                                <td>@item.PersonnelNumber</td>
+                                <td>@item.PPEName</td>
+                                <td>@item.BatchNumber</td>
+                                <td>@item.Size</td>
+                                <td>@item.Quantity</td>
+                                <td>@item.IssueDate.ToString("dd.MM.yyyy")</td>
+                            </tr>
+                            rowNum++;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Итоги -->
+    <div class="card bg-light">
+        <div class="card-body">
+            <h6 class="fw-bold">Итого выдано:</h6>
+            <ul class="list-unstyled mb-0">
+                <li>• Противогазов: <strong>@Model.TotalGasMasks</strong> шт.</li>
+                <li>• КИМГЗ: <strong>@Model.TotalKIMGZ</strong> шт.</li>
+                <li>• Прочих СИЗ: <strong>@Model.TotalOtherPPE</strong> шт./компл.</li>
+            </ul>
+        </div>
+    </div>
+</div>

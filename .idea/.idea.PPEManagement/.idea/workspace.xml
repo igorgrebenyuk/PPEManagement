@@ -10,12 +10,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ff56b42-32dd-4abc-b93f-56a0e1bca4aa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/AutoGenerateStatementRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement/Controllers/PPEStatementController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Details.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Edit.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PPEManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PPEManagement/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Common/PPEManagement.Common.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Common/PPEManagement.Common.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Context.EntityFrameworkCore/PPEManagement.Context.EntityFrameworkCore.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Context.EntityFrameworkCore/PPEManagement.Context.EntityFrameworkCore.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Context.Repositories/PPEManagement.Context.Repositories.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Context.Repositories/PPEManagement.Context.Repositories.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Context.Tests/PPEManagement.Context.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Context.Tests/PPEManagement.Context.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/PPEManagement.Context.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Context/PPEManagement.Context.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/PPEManagementContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Context/PPEManagementContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/PPEManagementDesignTimeContextFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Context/PPEManagementDesignTimeContextFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Dal.Contracts/PPEManagement.Dal.Contracts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Dal.Contracts/PPEManagement.Dal.Contracts.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Entities.Configurations/PPEManagement.Entities.Configurations.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Entities.Configurations/PPEManagement.Entities.Configurations.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Entities/PPEManagement.Entities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Entities/PPEManagement.Entities.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/PPEManagement.Repositories.Contracts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Repositories.Contracts/PPEManagement.Repositories.Contracts.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Repositories.Tests/PPEManagement.Repositories.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Repositories.Tests/PPEManagement.Repositories.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Repositories/PPEManagement.Repositories.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Repositories/PPEManagement.Repositories.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementDetailModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementDetailModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/PPEManagement.Services.Contracts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/PPEManagement.Services.Contracts.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Tests/PPEManagement.Services.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Tests/PPEManagement.Services.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services/PPEManagement.Services.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services/PPEManagement.Services.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement/PPEManagement.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/PPEManagement.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -46,6 +77,7 @@
     <setting file="file://$PROJECT_DIR$/PPEManagement.Context.Tests/PPEManagementContextInMemory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Context.Tests/TestWriterContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Context/PPEManagementContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Context/PPEManagementDesignTimeContextFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Dal.Contracts/BaseAuditEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Dal.Contracts/Interfaces/IEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Dal.Contracts/Interfaces/IEntityAuditCreated.cs" root0="FORCE_HIGHLIGHTING" />
@@ -83,6 +115,7 @@
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardCreateModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardUpdateModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/AutoGenerateStatementRequest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementCreateModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementDetailModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemCreateModel.cs" root0="FORCE_HIGHLIGHTING" />
@@ -98,6 +131,9 @@
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services/Validators/Constraints/PPECardConstraints.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services/Validators/EmployeeCreateModelValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services/Validators/EmployeeUpdateModelValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services/Validators/PPECardCreateModelValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services/Validators/PPEStatementCreateModelValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement/Controllers/PPEStatementController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -111,11 +147,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Launch Settings Profile.PPEManagement: http.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "AddPPEManagementPostGruAndMigration",
+    "git-widget-placeholder": "AddPPEManagementControllerAndView",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

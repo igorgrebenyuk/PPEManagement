@@ -1,0 +1,179 @@
+﻿@{
+    ViewData["Title"] = "Создание ведомости выдачи СИЗ";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Создание ведомости выдачи СИЗ</h2>
+
+    <form id="statementForm">
+        <!-- Шапка ведомости -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Основная информация</h5>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="organizationName" class="form-label">
+                            Наименование организации <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" class="form-control" id="organizationName" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="departmentName" class="form-label">
+                            Подразделение/формирование НФГО
+                        </label>
+                        <input type="text" class="form-control" id="departmentName">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="reason" class="form-label">
+                            Основание выдачи <span class="text-danger">*</span>
+                        </label>
+                        <select class="form-select" id="reason" required>
+                            <option value="">-- Выберите основание --</option>
+                            <option value="Плановая замена">Плановая замена</option>
+                            <option value="Тренировка">Тренировка</option>
+                            <option value="Введение Плана ГО">Введение Плана ГО</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="responsiblePerson" class="form-label">
+                            Ответственное лицо (ФИО, должность)
+                        </label>
+                        <input type="text" class="form-control" id="responsiblePerson">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Позиции ведомости -->
+        <div class="card mb-4">
+            <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Позиции ведомости</h5>
+                <button type="button" class="btn btn-light btn-sm" id="addItem">
+                    <i class="bi bi-plus-circle"></i> Добавить позицию
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="itemsTable">
+                        <thead class="table-light">
+                            <tr>
+                                <th style="width: 5%">№</th>
+                                <th style="width: 20%">ФИО сотрудника</th>
+                                <th style="width: 12%">Табельный номер</th>
+                                <th style="width: 20%">Наименование СИЗ</th>
+                                <th style="width: 15%">Номер партии / зав. №</th>
+                                <th style="width: 8%">Размер</th>
+                                <th style="width: 10%">Количество</th>
+                                <th style="width: 10%">Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="itemsBody">
+                            <!-- Позиции добавляются динамически -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопки -->
+        <div class="d-flex justify-content-between">
+            <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+            <button type="submit" class="btn btn-primary">Создать ведомость</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        let itemCounter = 0;
+
+        // Добавление новой позиции
+        document.getElementById('addItem').addEventListener('click', function() {
+            itemCounter++;
+            const tbody = document.getElementById('itemsBody');
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${itemCounter}</td>
+                <td><input type="text" class="form-control form-control-sm" name="items[${itemCounter-1}].employeeFullName" required></td>
+                <td><input type="text" class="form-control form-control-sm" name="items[${itemCounter-1}].personnelNumber"></td>
+                <td><input type="text" class="form-control form-control-sm" name="items[${itemCounter-1}].ppeName" required></td>
+                <td><input type="text" class="form-control form-control-sm" name="items[${itemCounter-1}].batchNumber"></td>
+                <td><input type="text" class="form-control form-control-sm" name="items[${itemCounter-1}].size"></td>
+                <td><input type="number" class="form-control form-control-sm" name="items[${itemCounter-1}].quantity" value="1" min="1" required></td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm remove-item">Удалить</button>
+                </td>
+            `;
+            tbody.appendChild(row);
+        });
+
+        // Удаление позиции
+        document.getElementById('itemsBody').addEventListener('click', function(e) {
+            if (e.target.classList.contains('remove-item')) {
+                e.target.closest('tr').remove();
+                renumberItems();
+            }
+        });
+
+        // Перенумерация
+        function renumberItems() {
+            const rows = document.querySelectorAll('#itemsBody tr');
+            rows.forEach((row, index) => {
+                row.cells[0].textContent = index + 1;
+            });
+            itemCounter = rows.length;
+        }
+
+        // Отправка формы
+        document.getElementById('statementForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const items = [];
+            document.querySelectorAll('#itemsBody tr').forEach((row, index) => {
+                items.push({
+                    employeeFullName: row.querySelector(`[name="items[${index}].employeeFullName"]`).value,
+                    personnelNumber: row.querySelector(`[name="items[${index}].personnelNumber"]`).value,
+                    ppeName: row.querySelector(`[name="items[${index}].ppeName"]`).value,
+                    batchNumber: row.querySelector(`[name="items[${index}].batchNumber"]`).value,
+                    size: row.querySelector(`[name="items[${index}].size"]`).value,
+                    quantity: parseInt(row.querySelector(`[name="items[${index}].quantity"]`).value),
+                    issueDate: new Date().toISOString()
+                });
+            });
+
+            const data = {
+                organizationName: document.getElementById('organizationName').value,
+                departmentName: document.getElementById('departmentName').value,
+                reason: document.getElementById('reason').value,
+                responsiblePerson: document.getElementById('responsiblePerson').value,
+                issueDate: new Date().toISOString(),
+                items: items
+            };
+
+            try {
+                const response = await fetch('/api/PpeStatement', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert('Ведомость успешно создана!');
+                    window.location.href = '/PpeStatement';
+                } else {
+                    const error = await response.text();
+                    alert('Ошибка: ' + error);
+                }
+            } catch (error) {
+                alert('Ошибка: ' + error.message);
+            }
+        });
+    </script>
+}
