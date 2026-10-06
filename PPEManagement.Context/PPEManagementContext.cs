@@ -77,7 +77,6 @@ public class PPEManagementContext : DbContext,
     {
         var count = await base.SaveChangesAsync(cancellationToken);
         
-        // Отсоединяем все сущности от кэша трекера после сохранения
         foreach (var entry in base.ChangeTracker.Entries().ToArray())
         {
             entry.State = EntityState.Detached;

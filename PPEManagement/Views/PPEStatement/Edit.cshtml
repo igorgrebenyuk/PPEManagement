@@ -1,7 +1,7 @@
 ﻿@model PPEManagement.Services.Contracts.Models.PPEStatement.PPEStatementDetailModel
 
 @{
-    ViewData["Title"] = $"Редактирование ведомости";
+    ViewData["Title"] = "Редактирование ведомости";
 }
 
 <div class="container mt-4">
@@ -61,8 +61,11 @@
 
         <!-- Позиции -->
         <div class="card mb-4">
-            <div class="card-header bg-success text-white">
+            <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">Позиции ведомости</h5>
+                <button type="button" class="btn btn-light btn-sm" id="addItem">
+                    <i class="bi bi-plus-circle"></i> Добавить позицию
+                </button>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -83,14 +86,14 @@
                             @{ int itemIndex = 0; }
                             @foreach (var item in Model.Items)
                             {
-                                <tr data-index="@itemIndex">
+                                <tr>
                                     <td>@(itemIndex + 1)</td>
-                                    <td><input type="text" class="form-control form-control-sm" value="@item.EmployeeFullName"></td>
+                                    <td><input type="text" class="form-control form-control-sm" value="@item.EmployeeFullName" required></td>
                                     <td><input type="text" class="form-control form-control-sm" value="@item.PersonnelNumber"></td>
-                                    <td><input type="text" class="form-control form-control-sm" value="@item.PPEName"></td>
+                                    <td><input type="text" class="form-control form-control-sm" value="@item.PPEName" required></td>
                                     <td><input type="text" class="form-control form-control-sm" value="@item.BatchNumber"></td>
                                     <td><input type="text" class="form-control form-control-sm" value="@item.Size"></td>
-                                    <td><input type="number" class="form-control form-control-sm" value="@item.Quantity" min="1"></td>
+                                    <td><input type="number" class="form-control form-control-sm" value="@item.Quantity" min="1" required></td>
                                     <td>
                                         <button type="button" class="btn btn-danger btn-sm remove-item">Удалить</button>
                                     </td>
@@ -115,6 +118,26 @@
     <script>
         let itemCounter = @Model.Items.Count;
 
+        // Добавление новой позиции
+        document.getElementById('addItem').addEventListener('click', function() {
+            itemCounter++;
+            const tbody = document.getElementById('itemsBody');
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${itemCounter}</td>
+                <td><input type="text" class="form-control form-control-sm" value="" required></td>
+                <td><input type="text" class="form-control form-control-sm" value=""></td>
+                <td><input type="text" class="form-control form-control-sm" value="" required></td>
+                <td><input type="text" class="form-control form-control-sm" value=""></td>
+                <td><input type="text" class="form-control form-control-sm" value=""></td>
+                <td><input type="number" class="form-control form-control-sm" value="1" min="1" required></td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm remove-item">Удалить</button>
+                </td>
+            `;
+            tbody.appendChild(row);
+        });
+
         // Удаление позиции
         document.getElementById('itemsBody').addEventListener('click', function(e) {
             if (e.target.classList.contains('remove-item')) {
@@ -123,7 +146,7 @@
             }
         });
 
-        // Перенумерация строк таблицы
+        // Перенумерация
         function renumberItems() {
             const rows = document.querySelectorAll('#itemsBody tr');
             rows.forEach((row, index) => {
@@ -138,22 +161,15 @@
 
             const items = [];
             document.querySelectorAll('#itemsBody tr').forEach((row) => {
-                // Достаем значения строго по индексам ячеек таблицы (cells)
-                const employeeFullNameInput = row.cells[1].querySelector('input');
-                const personnelNumberInput = row.cells[2].querySelector('input');
-                const ppeNameInput = row.cells[3].querySelector('input');
-                const batchNumberInput = row.cells[4].querySelector('input');
-                const sizeInput = row.cells[5].querySelector('input');
-                const quantityInput = row.cells[6].querySelector('input');
-
-                if (employeeFullNameInput && personnelNumberInput && ppeNameInput && batchNumberInput && sizeInput && quantityInput) {
+                const inputs = row.querySelectorAll('input');
+                if (inputs.length >= 6) {
                     items.push({
-                        employeeFullName: employeeFullNameInput.value,
-                        personnelNumber: personnelNumberInput.value,
-                        ppeName: ppeNameInput.value,
-                        batchNumber: batchNumberInput.value,
-                        size: sizeInput.value,
-                        quantity: parseInt(quantityInput.value) || 1,
+                        employeeFullName: inputs[0].value,
+                        personnelNumber: inputs[1].value,
+                        ppeName: inputs[2].value,
+                        batchNumber: inputs[3].value,
+                        size: inputs[4].value,
+                        quantity: parseInt(inputs[5].value) || 1,
                         issueDate: new Date().toISOString()
                     });
                 }

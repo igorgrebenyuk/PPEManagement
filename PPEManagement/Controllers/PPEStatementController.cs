@@ -7,23 +7,25 @@ namespace PPEManagement.Controllers;
 /// <summary>
 /// Контроллер для управления ведомостями выдачи СИЗ.
 /// </summary>
-[Route("[controller]")]
 public class PpeStatementController : Controller
 {
-    private readonly IPPEStatementService _statementService;
+    private readonly IPPEStatementService statementService;
 
     public PpeStatementController(IPPEStatementService statementService)
     {
-        _statementService = statementService;
+        statementService = statementService;
     }
 
-    [HttpGet]
+    #region MVC Views
+
+    [HttpGet("PpeStatement")]
+    [HttpGet("PpeStatement/Index")]
     public IActionResult Index()
     {
         return View();
     }
 
-    [HttpGet("Create")]
+    [HttpGet("PpeStatement/Create")]
     public IActionResult Create()
     {
         return View();
@@ -32,109 +34,88 @@ public class PpeStatementController : Controller
     /// <summary>
     /// Страница просмотра ведомости.
     /// </summary>
-    [HttpGet("Details/{id}")]
+    [HttpGet("PpeStatement/Details/{id:guid}")]
     public async Task<IActionResult> Details(Guid id, CancellationToken cancellationToken)
     {
-        var detailModel = await _statementService.GetPPEStatementByIdAsync(id, cancellationToken);
+        var detailModel = await statementService.GetPPEStatementByIdAsync(id, cancellationToken);
         
         if (detailModel == null)
         {
             return NotFound();
         }
         
-        var viewModel = new PPEStatementViewModel
-        {
-            OrganizationName = detailModel.OrganizationName,
-            DepartmentName = detailModel.DepartmentName,
-            Reason = detailModel.Reason,
-            IssueDate = detailModel.IssueDate,
-            ResponsiblePerson = detailModel.ResponsiblePerson,
-            TotalGasMasks = detailModel.TotalGasMasks,
-            TotalKIMGZ = detailModel.TotalKIMGZ,
-            TotalOtherPPE = detailModel.TotalOtherPPE,
-            Items = detailModel.Items.Select((item, index) => new PPEStatementItemViewModel
-            {
-                RowNumber = index + 1,
-                EmployeeFullName = item.EmployeeFullName,
-                PersonnelNumber = item.PersonnelNumber,
-                PPEName = item.PPEName,
-                BatchNumber = item.BatchNumber,
-                Size = item.Size,
-                Quantity = item.Quantity,
-                IssueDate = item.IssueDate
-            }).ToList()
-        };
-
-        return View(viewModel);
+        return View(detailModel);
     }
 
     /// <summary>
     /// Страница редактирования ведомости.
     /// </summary>
-    [HttpGet("Edit/{id}")]
+    [HttpGet("PpeStatement/Edit/{id:guid}")]
     public async Task<IActionResult> Edit(Guid id, CancellationToken cancellationToken)
     {
-        var detailModel = await _statementService.GetPPEStatementByIdAsync(id, cancellationToken);
+        var detailModel = await statementService.GetPPEStatementByIdAsync(id, cancellationToken);
         
         if (detailModel == null)
         {
             return NotFound();
         }
         
-        var viewModel = new PPEStatementViewModel
-        {
-            OrganizationName = detailModel.OrganizationName,
-            DepartmentName = detailModel.DepartmentName,
-            Reason = detailModel.Reason,
-            IssueDate = detailModel.IssueDate,
-            ResponsiblePerson = detailModel.ResponsiblePerson,
-            TotalGasMasks = detailModel.TotalGasMasks,
-            TotalKIMGZ = detailModel.TotalKIMGZ,
-            TotalOtherPPE = detailModel.TotalOtherPPE,
-            Items = detailModel.Items.Select((item, index) => new PPEStatementItemViewModel
-            {
-                RowNumber = index + 1,
-                EmployeeFullName = item.EmployeeFullName,
-                PersonnelNumber = item.PersonnelNumber,
-                PPEName = item.PPEName,
-                BatchNumber = item.BatchNumber,
-                Size = item.Size,
-                Quantity = item.Quantity,
-                IssueDate = item.IssueDate
-            }).ToList()
-        };
-
-        return View(viewModel);
+        return View(detailModel);
     }
 
-    [HttpPost("api/create")]
+    #endregion
+
+    #region REST API Endpoints
+
+    [HttpPost("api/PpeStatement")]
     [ProducesResponseType(typeof(PPEStatementDetailModel), StatusCodes.Status201Created)]
     public async Task<IActionResult> CreateStatement(
         [FromBody] PPEStatementCreateModel model,
         CancellationToken cancellationToken)
     {
-        var created = await _statementService.AddPPEStatementAsync(model, cancellationToken);
+        var created = await statementService.AddPPEStatementAsync(model, cancellationToken);
         return CreatedAtAction(nameof(Details), new { id = created.Id }, created);
     }
 
-    [HttpGet("api/{id}")]
+    [HttpGet("api/PpeStatement/{id:guid}")]
     public async Task<IActionResult> GetStatement(Guid id, CancellationToken cancellationToken)
     {
-        var statement = await _statementService.GetPPEStatementByIdAsync(id, cancellationToken);
+        var statement = await statementService.GetPPEStatementByIdAsync(id, cancellationToken);
+        if (statement == null)
+        {
+            return NotFound();
+        }
         return Ok(statement);
     }
 
-    [HttpGet("api")]
+    [HttpGet("api/PpeStatement")]
     public async Task<IActionResult> GetAllStatements(CancellationToken cancellationToken)
     {
-        var statements = await _statementService.GetPPEStatementsAsync(cancellationToken);
+        var statements = await statementService.GetPPEStatementsAsync(cancellationToken);
         return Ok(statements);
     }
 
-    [HttpDelete("api/{id}")]
-    public async Task<IActionResult> DeleteStatement(Guid id, CancellationToken cancellationToken)
+    [HttpPut("api/PpeStatement/{id:guid}")]
+    public async Task<IActionResult> UpdateStatement(
+        Guid id,
+        [FromBody] PPEStatementUpdateModel model,
+        CancellationToken cancellationToken)
     {
-        await _statementService.DeletePPEStatementAsync(id, cancellationToken);
+        if (id != model.Id)
+        {
+            return BadRequest("Идентификаторы ведомости не совпадают.");
+        }
+
+        await statementService.UpdatePPEStatementAsync(id , model, cancellationToken);
         return NoContent();
     }
+
+    [HttpDelete("api/PpeStatement/{id:guid}")]
+    public async Task<IActionResult> DeleteStatement(Guid id, CancellationToken cancellationToken)
+    {
+        await statementService.DeletePPEStatementAsync(id, cancellationToken);
+        return NoContent();
+    }
+
+    #endregion
 }

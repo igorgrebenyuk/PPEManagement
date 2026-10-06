@@ -8,7 +8,7 @@ using PPEManagement.Dal.Contracts.Repositories;
 using PPEManagement.Repositories.Contracts;
 using PPEManagement.Entities;
 
-namespace PPEManagement.BLL.Services
+namespace PPEManagement.Services
 {
     /// <summary>
     /// Сервис для работы с сотрудниками.

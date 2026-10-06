@@ -36,4 +36,10 @@ public interface IPPEStatementService
     /// <param name="id">Идентификатор ведомости.</param>
     /// <param name="cancellationToken">Токен отмены операции.</param>
     Task DeletePPEStatementAsync(Guid id, CancellationToken cancellationToken);
+    
+    
+    /// <summary>
+    /// Обновляет ведомость выдачи СИЗ по идентификатору.
+    /// </summary>
+    Task UpdatePPEStatementAsync(Guid id, PPEStatementCreateModel model, CancellationToken cancellationToken);
 }

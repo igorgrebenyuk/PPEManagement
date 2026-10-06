@@ -45,7 +45,7 @@ public class PPEStatementDetailModel
     /// <summary>
     /// Информация о сотруднике
     /// </summary>
-    public EmployeeModel Employee { get; set; } = null!;
+    public EmployeeModel? Employee { get; set; }
 
     /// <summary>
     /// Список выданных СИЗ
