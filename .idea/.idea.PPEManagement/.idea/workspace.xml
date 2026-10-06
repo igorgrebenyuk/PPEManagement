@@ -10,18 +10,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ff56b42-32dd-4abc-b93f-56a0e1bca4aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementUpdateModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Common/DateTimeProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement.Services/Validators/PPECardUpdateModelValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPEManagement/Infrastructure/HttpIdentityProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/Migrations/20261005170634_InitialCreate.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/Migrations/20261005170634_InitialCreate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/Migrations/20261005171721_Init.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/Migrations/20261005171721_Init.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/Migrations/PPEManagementContextModelSnapshot.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PPEManagement.Context/PPEManagementContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Context/PPEManagementContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/IPPEStatementService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/IPPEStatementService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/AutoGenerateStatementRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementDetailModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementDetailModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Services/EmployeeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services/EmployeeService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/PPEManagementDesignTimeContextFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Context/PPEManagementDesignTimeContextFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Entities.Configurations/EmployeeConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Entities.Configurations/EmployeeConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Entities.Configurations/PPECardConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Entities.Configurations/PPECardConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Entities.Configurations/PPEStatementConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Entities.Configurations/PPEStatementConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Entities/PPECard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Entities/PPECard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardUpdateModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPECard/PPECardUpdateModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services/AutoMapper/ServiceProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services/AutoMapper/ServiceProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PPEManagement.Services/PPEStatementService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services/PPEStatementService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PPEManagement/Controllers/PPEStatementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Controllers/PPEStatementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement/PPEManagement.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/PPEManagement.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PPEManagement/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Create.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Edit.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +65,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Common/DateTimeProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Common/IDateTimeProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Common/IIdentityProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Common/InvalidateItemModel.cs" root0="FORCE_HIGHLIGHTING" />
@@ -115,8 +129,10 @@
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services/Validators/EmployeeCreateModelValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services/Validators/EmployeeUpdateModelValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services/Validators/PPECardCreateModelValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement.Services/Validators/PPECardUpdateModelValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement.Services/Validators/PPEStatementCreateModelValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement/Controllers/PPEStatementController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PPEManagement/Infrastructure/HttpIdentityProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PPEManagement/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fc93f9613ce5192d12612ee1e55980988597b5d7aef66f40dd4b6898437a19/WebApplicationBuilder.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -146,6 +162,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -317,7 +334,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791292597135</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Переделал контроллер , сделал все необходимые вьюхи , сделал модель для обновления ведомости выдачи СИЗ , сделал метод редактирования ведомости , написал программ , осталось разобраться с рантайм ошибками">
+      <option name="closed" value="true" />
+      <created>1791298493908</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1791298493908</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +374,8 @@
     <MESSAGE value="Добавил постгрю , и создал миграции" />
     <MESSAGE value="Делаю Создание ПР" />
     <MESSAGE value="переработал программ" />
-    <option name="LAST_COMMIT_MESSAGE" value="переработал программ" />
+    <MESSAGE value="Переделал контроллер , сделал все необходимые вьюхи , сделал модель для обновления ведомости выдачи СИЗ , сделал метод редактирования ведомости , написал программ , осталось разобраться с рантайм ошибками" />
+    <option name="LAST_COMMIT_MESSAGE" value="Переделал контроллер , сделал все необходимые вьюхи , сделал модель для обновления ведомости выдачи СИЗ , сделал метод редактирования ведомости , написал программ , осталось разобраться с рантайм ошибками" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

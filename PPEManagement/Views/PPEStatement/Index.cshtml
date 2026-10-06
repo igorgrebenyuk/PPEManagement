@@ -66,20 +66,20 @@ ViewData["Title"] = "Ведомости выдачи СИЗ";
             statements.forEach(statement => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                        <td>${statement.id}</td>
-                        <td>${statement.organizationName}</td>
-                        <td>${statement.departmentName || '-'}</td>
-                        <td>${statement.reason}</td>
-                        <td>${new Date(statement.issueDate).toLocaleDateString('ru-RU')}</td>
-                        <td>
-                            <a href="/PpeStatement/Details/${statement.id}" class="btn btn-sm btn-info">
-                                <i class="bi bi-eye"></i> Просмотр
-                            </a>
-                            <button onclick="deleteStatement('${statement.id}')" class="btn btn-sm btn-danger">
-                                <i class="bi bi-trash"></i> Удалить
-                            </button>
-                        </td>
-                    `;
+            <td>${statement.statementNumber || statement.id}</td>
+            <td>${statement.organizationName || '-'}</td>
+            <td>${statement.departmentName || '-'}</td>
+            <td>${statement.reason || '-'}</td>
+            <td>${new Date(statement.issueDate).toLocaleDateString('ru-RU')}</td>
+            <td>
+                <a href="/PpeStatement/Details/${statement.id}" class="btn btn-sm btn-info">
+                    <i class="bi bi-eye"></i> Просмотр
+                </a>
+                <button onclick="deleteStatement('${statement.id}')" class="btn btn-sm btn-danger">
+                    <i class="bi bi-trash"></i> Удалить
+                </button>
+            </td>
+        `;
                 tbody.appendChild(row);
             });
         } catch (error) {

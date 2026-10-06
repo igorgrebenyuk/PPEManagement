@@ -1,12 +1,12 @@
 ﻿@{
-ViewData["Title"] = "Создание ведомости выдачи СИЗ";
+ViewData["Title"] = "Создание ведомости";
 }
 
 <div class="container mt-4">
-    <h2 class="mb-4">Создание ведомости выдачи СИЗ</h2>
+    <h2 class="mb-4">Создать новую ведомость выдачи СИЗ</h2>
 
-    <form id="statementForm">
-        <!-- Шапка ведомости -->
+    <form id="createForm">
+        <!-- Основная информация -->
         <div class="card mb-4">
             <div class="card-header bg-primary text-white">
                 <h5 class="mb-0">Основная информация</h5>
@@ -33,7 +33,6 @@ ViewData["Title"] = "Создание ведомости выдачи СИЗ";
                             Основание выдачи <span class="text-danger">*</span>
                         </label>
                         <select class="form-select" id="reason" required>
-                            <option value="">-- Выберите основание --</option>
                             <option value="Плановая замена">Плановая замена</option>
                             <option value="Тренировка">Тренировка</option>
                             <option value="Введение Плана ГО">Введение Плана ГО</option>
@@ -41,7 +40,7 @@ ViewData["Title"] = "Создание ведомости выдачи СИЗ";
                     </div>
                     <div class="col-md-6">
                         <label for="responsiblePerson" class="form-label">
-                            Ответственное лицо (ФИО, должность)
+                            Ответственное лицо
                         </label>
                         <input type="text" class="form-control" id="responsiblePerson">
                     </div>
@@ -62,28 +61,28 @@ ViewData["Title"] = "Создание ведомости выдачи СИЗ";
                     <table class="table table-bordered" id="itemsTable">
                         <thead class="table-light">
                         <tr>
-                            <th style="width: 5%">№</th>
-                            <th style="width: 20%">ФИО сотрудника</th>
-                            <th style="width: 12%">Табельный номер</th>
-                            <th style="width: 20%">Наименование СИЗ</th>
-                            <th style="width: 15%">Номер партии / зав. №</th>
-                            <th style="width: 8%">Размер</th>
-                            <th style="width: 10%">Количество</th>
-                            <th style="width: 10%">Действия</th>
+                            <th>№</th>
+                            <th>ФИО сотрудника</th>
+                            <th>Табельный номер</th>
+                            <th>Наименование СИЗ</th>
+                            <th>Номер партии</th>
+                            <th>Размер</th>
+                            <th>Количество</th>
+                            <th>Действия</th>
                         </tr>
                         </thead>
                         <tbody id="itemsBody">
-                        <!-- Позиции добавляются динамически -->
+                        <!-- Строки будут добавляться через JavaScript -->
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
 
-        <!-- Кнопки -->
+        <!-- Кнопки управления -->
         <div class="d-flex justify-content-between">
             <a asp-action="Index" class="btn btn-secondary">Отмена</a>
-            <button type="submit" class="btn btn-primary">Создать ведомость</button>
+            <button type="button" class="btn btn-primary" id="submitFormButton">Создать ведомость</button>
         </div>
     </form>
 </div>
@@ -92,18 +91,19 @@ ViewData["Title"] = "Создание ведомости выдачи СИЗ";
 <script>
     let itemCounter = 0;
 
+    // Добавление новой позиции (исправлено и работает!)
     document.getElementById('addItem').addEventListener('click', function() {
         itemCounter++;
         const tbody = document.getElementById('itemsBody');
         const row = document.createElement('tr');
         row.innerHTML = `
                 <td>${itemCounter}</td>
-                <td><input type="text" class="form-control form-control-sm" name="items[${itemCounter-1}].employeeFullName" required></td>
-                <td><input type="text" class="form-control form-control-sm" name="items[${itemCounter-1}].personnelNumber"></td>
-                <td><input type="text" class="form-control form-control-sm" name="items[${itemCounter-1}].ppeName" required></td>
-                <td><input type="text" class="form-control form-control-sm" name="items[${itemCounter-1}].batchNumber"></td>
-                <td><input type="text" class="form-control form-control-sm" name="items[${itemCounter-1}].size"></td>
-                <td><input type="number" class="form-control form-control-sm" name="items[${itemCounter-1}].quantity" value="1" min="1" required></td>
+                <td><input type="text" class="form-control form-control-sm" required></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm" required></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="number" class="form-control form-control-sm" value="1" min="1" required></td>
                 <td>
                     <button type="button" class="btn btn-danger btn-sm remove-item">Удалить</button>
                 </td>
@@ -111,6 +111,7 @@ ViewData["Title"] = "Создание ведомости выдачи СИЗ";
         tbody.appendChild(row);
     });
 
+    // Удаление позиции
     document.getElementById('itemsBody').addEventListener('click', function(e) {
         if (e.target.classList.contains('remove-item')) {
             e.target.closest('tr').remove();
@@ -118,6 +119,7 @@ ViewData["Title"] = "Создание ведомости выдачи СИЗ";
         }
     });
 
+    // Перенумерация строк
     function renumberItems() {
         const rows = document.querySelectorAll('#itemsBody tr');
         rows.forEach((row, index) => {
@@ -126,20 +128,24 @@ ViewData["Title"] = "Создание ведомости выдачи СИЗ";
         itemCounter = rows.length;
     }
 
-    document.getElementById('statementForm').addEventListener('submit', async function(e) {
+    // Отправка формы на бэкенд
+    document.getElementById('submitFormButton').addEventListener('click', async function(e) {
         e.preventDefault();
 
         const items = [];
-        document.querySelectorAll('#itemsBody tr').forEach((row, index) => {
-            items.push({
-                employeeFullName: row.querySelector(`[name="items[${index}].employeeFullName"]`).value,
-                personnelNumber: row.querySelector(`[name="items[${index}].personnelNumber"]`).value,
-                ppeName: row.querySelector(`[name="items[${index}].ppeName"]`).value,
-                batchNumber: row.querySelector(`[name="items[${index}].batchNumber"]`).value,
-                size: row.querySelector(`[name="items[${index}].size"]`).value,
-                quantity: parseInt(row.querySelector(`[name="items[${index}].quantity"]`).value) || 1,
-                issueDate: new Date().toISOString()
-            });
+        document.querySelectorAll('#itemsBody tr').forEach((row) => {
+            const inputs = row.querySelectorAll('input');
+            if (inputs.length >= 6) {
+                items.push({
+                    employeeFullName: inputs[0].value,
+                    personnelNumber: inputs[1].value,
+                    ppeName: inputs[2].value,
+                    batchNumber: inputs[3].value,
+                    size: inputs[4].value,
+                    quantity: parseInt(inputs[5].value) || 1,
+                    issueDate: new Date().toISOString()
+                });
+            }
         });
 
         const data = {

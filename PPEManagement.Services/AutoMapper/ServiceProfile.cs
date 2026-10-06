@@ -36,16 +36,12 @@ public class ServiceProfile : Profile
 
     private void CreateMapForPPEStatement()
     {
-        // Маппинг списочной модели
-        CreateMap<PPEStatement, PPEStatementModel>()
-            .ForMember(dest => dest.StatementNumber, opt => opt.MapFrom(src => src.StatementNumber))
-            .ForMember(dest => dest.EmployeeId, opt => opt.Ignore())
-            .ForMember(dest => dest.EmployeeFullName, opt => opt.Ignore());
+        // Маппинг списочной модели (все имена полей совпадают, ForMember не требуются)
+        CreateMap<PPEStatement, PPEStatementModel>();
 
         // Маппинг детальной модели
         CreateMap<PPEStatement, PPEStatementDetailModel>()
-            .ForMember(dest => dest.StatementNumber, opt => opt.MapFrom(src => src.StatementNumber))
-            .ForMember(dest => dest.Employee, opt => opt.Ignore()) // Игнорируем Employee в шапке
+            .ForMember(dest => dest.Employee, opt => opt.Ignore())
             .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
 
         // Маппинг строки табличной части

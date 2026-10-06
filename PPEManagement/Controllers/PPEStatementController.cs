@@ -13,11 +13,12 @@ public class PpeStatementController : Controller
 
     public PpeStatementController(IPPEStatementService statementService)
     {
-        statementService = statementService;
+        this.statementService = statementService;
     }
 
     #region MVC Views
-
+    
+    [HttpGet("")]
     [HttpGet("PpeStatement")]
     [HttpGet("PpeStatement/Index")]
     public IActionResult Index()

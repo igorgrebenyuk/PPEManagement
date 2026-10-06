@@ -12,7 +12,7 @@ using PPEManagement.Context;
 namespace PPEManagement.Context.Migrations
 {
     [DbContext(typeof(PPEManagementContext))]
-    [Migration("20261005170634_InitialCreate")]
+    [Migration("20261006162332_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace PPEManagement.Context.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.9")
+                .HasAnnotation("ProductVersion", "10.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -84,7 +84,7 @@ namespace PPEManagement.Context.Migrations
                     b.HasIndex("PersonnelNumber")
                         .IsUnique()
                         .HasDatabaseName("IX_Employees_PersonnelNumber")
-                        .HasFilter("[DeletedAt] IS NULL");
+                        .HasFilter("\"DeletedAt\" IS NULL");
 
                     b.ToTable("Employees", (string)null);
                 });
@@ -112,7 +112,7 @@ namespace PPEManagement.Context.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTime>("ExpirationDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("IssuedToEmployeeFullName")
                         .IsRequired()
@@ -125,7 +125,7 @@ namespace PPEManagement.Context.Migrations
                         .HasColumnType("character varying(200)");
 
                     b.Property<DateTime>("NextCheckDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
@@ -151,7 +151,7 @@ namespace PPEManagement.Context.Migrations
 
                     b.HasIndex("Name", "BatchNumber")
                         .HasDatabaseName("IX_PPECards_Name_BatchNumber")
-                        .HasFilter("[DeletedAt] IS NULL");
+                        .HasFilter("\"DeletedAt\" IS NULL");
 
                     b.ToTable("PPECards", (string)null);
                 });
@@ -179,10 +179,10 @@ namespace PPEManagement.Context.Migrations
                         .HasColumnType("character varying(200)");
 
                     b.Property<DateTime>("IssueDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<DateTime?>("NextInspectionDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("OrganizationName")
                         .IsRequired()
@@ -234,7 +234,7 @@ namespace PPEManagement.Context.Migrations
                     b.HasIndex("StatementNumber")
                         .IsUnique()
                         .HasDatabaseName("IX_PPEStatements_StatementNumber")
-                        .HasFilter("[DeletedAt] IS NULL");
+                        .HasFilter("\"DeletedAt\" IS NULL");
 
                     b.ToTable("PPEStatements", (string)null);
                 });
@@ -267,7 +267,7 @@ namespace PPEManagement.Context.Migrations
                         .HasColumnType("character varying(250)");
 
                     b.Property<DateTime>("IssueDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("PPEName")
                         .IsRequired()

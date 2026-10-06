@@ -15,8 +15,8 @@ public class PPEManagementContext : DbContext,
     IUnitOfWork,
     IDbWriterContext
 {
-    private readonly IDateTimeProvider _dateTimeProvider;
-    private readonly IIdentityProvider _identityProvider;
+    private readonly IDateTimeProvider dateTimeProvider;
+    private readonly IIdentityProvider identityProvider;
 
     /// <summary>
     /// Инициализирует новый экземпляр <see cref="PPEManagementContext"/>
@@ -27,8 +27,8 @@ public class PPEManagementContext : DbContext,
         IIdentityProvider identityProvider = null!) // Добавляем в конструктор для IDbWriterContext
         : base(options)
     {
-        _dateTimeProvider = dateTimeProvider;
-        _identityProvider = identityProvider;
+        this.dateTimeProvider = dateTimeProvider;
+        this.identityProvider = identityProvider;
 
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", isEnabled: true);
         AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", isEnabled: true);
@@ -40,10 +40,10 @@ public class PPEManagementContext : DbContext,
     public IWriter Writer => this; // Возвращает текущий контекст, так как он сам реализует IWriter
 
     /// <inheritdoc />
-    public IDateTimeProvider DateTimeProvider => _dateTimeProvider;
+    public IDateTimeProvider DateTimeProvider => dateTimeProvider;
 
     /// <inheritdoc />
-    public IIdentityProvider IdentityProvider => _identityProvider;
+    public IIdentityProvider IdentityProvider => identityProvider;
 
     #endregion
 

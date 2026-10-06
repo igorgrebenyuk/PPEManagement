@@ -63,7 +63,10 @@ namespace PPEManagement.Services;
 
             var entity = mapper.Map<PPEStatement>(ppeStatementModel);
 
-            // Автоматический пересчет итоговых сумм по категориям СИЗ в позициях ведомости
+            // 1. Генерация уникального регистрационного номера ведомости
+            entity.StatementNumber = $"ВЕД-{DateTime.UtcNow:yyyyMMdd}-{Guid.NewGuid().ToString()[..4].ToUpper()}";
+
+            // 2. Автоматический пересчет итоговых сумм по категориям СИЗ в позициях ведомости
             entity.TotalGasMasks = entity.Items.Count(i => i.PPEName.Contains("Противогаз", StringComparison.OrdinalIgnoreCase));
             entity.TotalKIMGZ = entity.Items.Count(i => i.PPEName.Contains("КИМГЗ", StringComparison.OrdinalIgnoreCase) || i.PPEName.Contains("Аптечка", StringComparison.OrdinalIgnoreCase));
             entity.TotalOtherPPE = entity.Items.Count - (entity.TotalGasMasks + entity.TotalKIMGZ);

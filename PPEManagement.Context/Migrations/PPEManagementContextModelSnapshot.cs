@@ -17,7 +17,7 @@ namespace PPEManagement.Context.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.9")
+                .HasAnnotation("ProductVersion", "10.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -81,7 +81,7 @@ namespace PPEManagement.Context.Migrations
                     b.HasIndex("PersonnelNumber")
                         .IsUnique()
                         .HasDatabaseName("IX_Employees_PersonnelNumber")
-                        .HasFilter("[DeletedAt] IS NULL");
+                        .HasFilter("\"DeletedAt\" IS NULL");
 
                     b.ToTable("Employees", (string)null);
                 });
@@ -148,7 +148,7 @@ namespace PPEManagement.Context.Migrations
 
                     b.HasIndex("Name", "BatchNumber")
                         .HasDatabaseName("IX_PPECards_Name_BatchNumber")
-                        .HasFilter("[DeletedAt] IS NULL");
+                        .HasFilter("\"DeletedAt\" IS NULL");
 
                     b.ToTable("PPECards", (string)null);
                 });
@@ -231,7 +231,7 @@ namespace PPEManagement.Context.Migrations
                     b.HasIndex("StatementNumber")
                         .IsUnique()
                         .HasDatabaseName("IX_PPEStatements_StatementNumber")
-                        .HasFilter("[DeletedAt] IS NULL");
+                        .HasFilter("\"DeletedAt\" IS NULL");
 
                     b.ToTable("PPEStatements", (string)null);
                 });
