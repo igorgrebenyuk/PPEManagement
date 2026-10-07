@@ -20,7 +20,7 @@ namespace PPEManagement.Services
         private readonly IMapper mapper;
         private readonly IValidator<PPECardCreateModel> createValidator;
         private readonly IValidator<PPECardUpdateModel> updateValidator;
-
+        
         public PPECardService(
             IPPECardRepository ppeCardRepository,
             IUnitOfWork unitOfWork,
@@ -34,13 +34,21 @@ namespace PPEManagement.Services
             this.createValidator = createValidator;
             this.updateValidator = updateValidator;
         }
-
+        
+        
+        /// <summary>
+        /// Возвращает список всех карточек СИЗ.
+        /// </summary>
         public async Task<IReadOnlyCollection<PPECardModel>> GetPPECardsAsync(CancellationToken cancellationToken)
         {
             var entities = await ppeCardRepository.GetPPECardsAsync(cancellationToken);
             return mapper.Map<IReadOnlyCollection<PPECardModel>>(entities);
         }
-
+        
+        
+        /// <summary>
+        /// Возвращает карточку СИЗ по идентификатору.
+        /// </summary>
         public async Task<PPECardModel> GetPPECardByIdAsync(Guid id, CancellationToken cancellationToken)
         {
             var entity = await ppeCardRepository.GetPPECardByIdAsync(id, cancellationToken);
@@ -51,7 +59,10 @@ namespace PPEManagement.Services
 
             return mapper.Map<PPECardModel>(entity);
         }
-
+        
+        /// <summary>
+        /// Проверяет модель, создаёт карточку СИЗ и сохраняет её в базе данных.
+        /// </summary>
         public async Task<PPECardModel> AddPPECardAsync(PPECardCreateModel ppeCardModel, CancellationToken cancellationToken)
         {
             var validationResult = await createValidator.ValidateAsync(ppeCardModel, cancellationToken);
@@ -71,7 +82,10 @@ namespace PPEManagement.Services
 
             return mapper.Map<PPECardModel>(entity);
         }
-
+        
+        /// <summary>
+        /// Проверяет модель и обновляет данные существующей карточки СИЗ.
+        /// </summary>
         public async Task UpdatePPECardAsync(PPECardUpdateModel ppeCardModel, CancellationToken cancellationToken)
         {
             var validationResult = await updateValidator.ValidateAsync(ppeCardModel, cancellationToken);
@@ -95,7 +109,10 @@ namespace PPEManagement.Services
 
             await unitOfWork.SaveChangesAsync(cancellationToken);
         }
-
+        
+        /// <summary>
+        /// Удаляет карточку СИЗ по идентификатору.
+        /// </summary>
         public async Task DeletePPECardAsync(Guid id, CancellationToken cancellationToken)
         {
             var entity = await ppeCardRepository.GetPPECardByIdAsync(id, cancellationToken);

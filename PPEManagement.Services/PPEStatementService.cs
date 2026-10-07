@@ -34,13 +34,20 @@ public class PPEStatementService : IPPEStatementService
         this.mapper = mapper;
         this.createValidator = createValidator;
     }
-
+    
+    /// <summary>
+    /// Возвращает список всех ведомостей выдачи СИЗ (без строк).
+    /// </summary>
     public async Task<IReadOnlyCollection<PPEStatementModel>> GetPPEStatementsAsync(CancellationToken cancellationToken)
     {
         var entities = await ppeStatementRepository.GetPPEStatementsAsync(cancellationToken);
         return mapper.Map<IReadOnlyCollection<PPEStatementModel>>(entities);
     }
-
+    
+    
+    /// <summary>
+    /// Возвращает ведомость выдачи СИЗ вместе со строками по идентификатору.
+    /// </summary>
     public async Task<PPEStatementDetailModel> GetPPEStatementByIdAsync(Guid id, CancellationToken cancellationToken)
     {
         var entity = await ppeStatementRepository.GetPPEStatementByIdAsync(id, cancellationToken);
@@ -51,7 +58,12 @@ public class PPEStatementService : IPPEStatementService
 
         return mapper.Map<PPEStatementDetailModel>(entity);
     }
-
+    
+    /// <summary>
+    /// Создаёт ведомость выдачи СИЗ: проверяет модель, проставляет дату выдачи во все строки,
+    /// генерирует регистрационный номер вида «ВЕД-ггггммдд-XXXX», пересчитывает итоги
+    /// по категориям СИЗ и сохраняет ведомость.
+    /// </summary>
     public async Task<PPEStatementDetailModel> AddPPEStatementAsync(PPEStatementCreateModel ppeStatementModel, CancellationToken cancellationToken)
     {
         var validationResult = await createValidator.ValidateAsync(ppeStatementModel, cancellationToken);
@@ -84,7 +96,10 @@ public class PPEStatementService : IPPEStatementService
 
         return mapper.Map<PPEStatementDetailModel>(entity);
     }
-
+    
+    /// <summary>
+    /// Удаляет ведомость выдачи СИЗ по идентификатору.
+    /// </summary>
     public async Task DeletePPEStatementAsync(Guid id, CancellationToken cancellationToken)
     {
         var entity = await ppeStatementRepository.GetPPEStatementByIdAsync(id, cancellationToken);
@@ -96,7 +111,12 @@ public class PPEStatementService : IPPEStatementService
         ppeStatementRepository.Delete(entity);
         await unitOfWork.SaveChangesAsync(cancellationToken);
     }
-
+    
+    /// <summary>
+    /// Обновляет ведомость выдачи СИЗ: меняет шапку и синхронизирует строки
+    /// (есть Id - обновляется, нет Id - добавляется, отсутствует в запросе — удаляется),
+    /// затем пересчитывает итоги по категориям СИЗ.
+    /// </summary>
     public async Task UpdatePPEStatementAsync(Guid id, PPEStatementCreateModel ppeStatementModel, CancellationToken cancellationToken)
     {
         // 1. Валидация входных данных

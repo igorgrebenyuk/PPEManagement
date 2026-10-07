@@ -20,7 +20,16 @@ namespace PPEManagement.Services
         private readonly IMapper mapper;
         private readonly IValidator<EmployeeCreateModel> createValidator;
         private readonly IValidator<EmployeeUpdateModel> updateValidator;
-
+        
+        
+        /// <summary>
+        /// ctor.
+        /// </summary>
+        /// <param name="employeeRepository"></param>
+        /// <param name="unitOfWork"></param>
+        /// <param name="mapper"></param>
+        /// <param name="createValidator"></param>
+        /// <param name="updateValidator"></param>
         public EmployeeService(
             IEmployeeRepository employeeRepository,
             IUnitOfWork unitOfWork,
@@ -34,13 +43,19 @@ namespace PPEManagement.Services
             this.createValidator = createValidator;
             this.updateValidator = updateValidator;
         }
-
+        
+        /// <summary>
+        /// Возвращает список всех сотрудников.
+        /// </summary>
         public async Task<IReadOnlyCollection<EmployeeModel>> GetEmployeesAsync(CancellationToken cancellationToken)
         {
             var entities = await employeeRepository.GetEmployeesAsync(cancellationToken);
             return mapper.Map<IReadOnlyCollection<EmployeeModel>>(entities);
         }
-
+        
+        /// <summary>
+        /// Возвращает сотрудника по идентификатору.
+        /// </summary>
         public async Task<EmployeeModel> GetEmployeeByIdAsync(Guid id, CancellationToken cancellationToken)
         {
             var entity = await employeeRepository.GetEmployeeByIdAsync(id, cancellationToken);
@@ -51,7 +66,10 @@ namespace PPEManagement.Services
 
             return mapper.Map<EmployeeModel>(entity);
         }
-
+        
+        /// <summary>
+        /// Проверяет модель, создаёт сотрудника и сохраняет его в базе данных.
+        /// </summary>
         public async Task<EmployeeModel> AddEmployeeAsync(EmployeeCreateModel employeeModel, CancellationToken cancellationToken)
         {
             var validationResult = await createValidator.ValidateAsync(employeeModel, cancellationToken);
@@ -71,7 +89,11 @@ namespace PPEManagement.Services
 
             return mapper.Map<EmployeeModel>(entity);
         }
-
+        
+        
+        /// <summary>
+        /// Проверяет модель и обновляет данные существующего сотрудника.
+        /// </summary>
         public async Task UpdateEmployeeAsync(EmployeeUpdateModel employeeModel, CancellationToken cancellationToken)
         {
             var validationResult = await updateValidator.ValidateAsync(employeeModel, cancellationToken);
@@ -95,7 +117,10 @@ namespace PPEManagement.Services
 
             await unitOfWork.SaveChangesAsync(cancellationToken);
         }
-
+        
+        /// <summary>
+        /// Удаляет сотрудника по идентификатору.
+        /// </summary>
         public async Task DeleteEmployeeAsync(Guid id, CancellationToken cancellationToken)
         {
             var entity = await employeeRepository.GetEmployeeByIdAsync(id, cancellationToken);
