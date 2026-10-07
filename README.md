@@ -36,17 +36,20 @@ classDiagram
     }
 
     class PPEStatement {
-        +string StatementNumber
-        +string OrganizationName
-        +string DepartmentName
-        +string Reason
-        +DateTime IssueDate
-        +string ResponsiblePerson
-        +int TotalGasMasks
-        +int TotalKIMGZ
-        +int TotalOtherPPE
-        +string SignedScanPath
-    }
+    +string StatementNumber
+    +string OrganizationName
+    +string DepartmentName
+    +string Reason
+    +DateTime IssueDate
+    +string ResponsiblePerson
+    +int TotalGasMasks
+    +int TotalKIMGZ
+    +int TotalOtherPPE
+    +int StockBalance
+    +DateTime? NextInspectionDate
+    +string SignedScanPath
+    +List~PPEStatementItem~ Items
+}
 
     class PPEStatementItem {
         +Guid StatementId
