@@ -18,6 +18,9 @@ public class PpeStatementController : Controller
 
     #region MVC Views
     
+    /// <summary>
+    /// Страница со списком ведомостей выдачи СИЗ (также корневая страница приложения).
+    /// </summary>
     [HttpGet("")]
     [HttpGet("PpeStatement")]
     [HttpGet("PpeStatement/Index")]
@@ -25,7 +28,10 @@ public class PpeStatementController : Controller
     {
         return View();
     }
-
+    
+    /// <summary>
+    /// Страница создания новой ведомости выдачи СИЗ.
+    /// </summary>
     [HttpGet("PpeStatement/Create")]
     public IActionResult Create()
     {

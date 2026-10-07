@@ -11,16 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5ff56b42-32dd-4abc-b93f-56a0e1bca4aa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PPEManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PPEManagement/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Context/PPEManagementContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Context/PPEManagementContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Repositories/PPEStatementRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Repositories/PPEStatementRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemCreateModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemCreateModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Contracts/Models/PPEStatement/PPEStatementItemModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Services.Tests/PPEStatementServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services.Tests/PPEStatementServiceTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement.Services/AutoMapper/ServiceProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services/AutoMapper/ServiceProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services/EmployeeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services/EmployeeService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services/PPECardService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services/PPECardService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PPEManagement.Services/PPEStatementService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services/PPEStatementService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Views/PPEStatement/Edit.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPEManagement/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services/Validators/Constraints/EmployeeConstraints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services/Validators/Constraints/EmployeeConstraints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement.Services/Validators/Constraints/PPECardConstraints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement.Services/Validators/Constraints/PPECardConstraints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PPEManagement/Controllers/PPEStatementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PPEManagement/Controllers/PPEStatementController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="AddPPEManagementControllerAndView" />
+        <entry key="$PROJECT_DIR$" value="PPEManagementFinalPr" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -142,7 +138,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;PPEManagementFinalPr&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;PPEManagementAddSummaries&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -233,7 +229,9 @@
       <workItem from="1791207730230" duration="7543000" />
       <workItem from="1791313521070" duration="1489000" />
       <workItem from="1791315732975" duration="785000" />
-      <workItem from="1791321742755" duration="2690000" />
+      <workItem from="1791321742755" duration="3410000" />
+      <workItem from="1791325273634" duration="589000" />
+      <workItem from="1791368825767" duration="2573000" />
     </task>
     <task id="LOCAL-00001" summary="Создал абстрактный класс базовых аудитов для сущностей , чтобы не писать одни и те же поля в сущностях , а так же создал 1 солюшн папку для разработки прослойки между БД и сервисами + создал библиотеку классов для моих сущностей">
       <option name="closed" value="true" />
@@ -339,7 +337,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791309247866</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Исправил баги связанные с редактированием ведомости :при редактировании позиции , не обновлялись данные + средства СИЗ не отображались в нужном количестве">
+      <option name="closed" value="true" />
+      <created>1791325089205</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1791325089205</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +379,8 @@
     <MESSAGE value="переработал программ" />
     <MESSAGE value="Переделал контроллер , сделал все необходимые вьюхи , сделал модель для обновления ведомости выдачи СИЗ , сделал метод редактирования ведомости , написал программ , осталось разобраться с рантайм ошибками" />
     <MESSAGE value="Сделал все вьюхи , сделал котроллер , переделал конекшн стрингу , написал программ , дополнил маппер для корретктного ввода данных , буду искать баги и исправлять в следующем ПР" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал все вьюхи , сделал котроллер , переделал конекшн стрингу , написал программ , дополнил маппер для корретктного ввода данных , буду искать баги и исправлять в следующем ПР" />
+    <MESSAGE value="Исправил баги связанные с редактированием ведомости :при редактировании позиции , не обновлялись данные + средства СИЗ не отображались в нужном количестве" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил баги связанные с редактированием ведомости :при редактировании позиции , не обновлялись данные + средства СИЗ не отображались в нужном количестве" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
